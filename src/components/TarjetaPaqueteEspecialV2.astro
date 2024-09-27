@@ -1,0 +1,175 @@
+---
+interface Props {
+	precio: string;
+	modelo: string;
+	description: string;
+	lista: {
+		icono: string;
+		texto: string;
+	}[];
+}
+
+const { precio, modelo, description, lista } = Astro.props;
+---
+
+<div class="contenedor-tarjeta-basica">
+    <div class="tarjeta">
+        <div>
+        <p class="price mb-5 text-white font-bold text-8xl text-center">${precio}<span class="duration"> /month</span></p>
+            
+            <p class="modelo text-center">{modelo}</p>
+            <p class="description text-center">{description}</p>
+            
+			<ul class="fila">
+				{lista.map((item) => (
+				  <li class="description">
+					<span class="icono">
+					  <img class="image" src={item.icono} />
+					</span>
+					{item.texto}
+				  </li>
+				))}
+			  </ul>
+        
+        </div>
+        <div class="flex justify-center align-middle">
+
+            <button>Chose Plan </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<style>
+
+
+
+	.contenedor-tarjeta-basica
+	{
+		width: 100%;
+		height: max-content;
+		border-radius: 20px;
+		padding: 20px 20px 20px 20px;
+        background:  linear-gradient(180deg, #00C937 0%, #7A47DD 100%);
+        transition: all 0.5s ease;
+        transform-origin: bottom;
+	}
+    .contenedor-tarjeta-basica:hover{
+        box-shadow: 0 0 20px 0 #00C937FF;
+        transform: scaleY(1.1);
+        transition: all 0.5s ease;
+
+    }
+	.tarjeta
+	{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+        align-items: center;
+		height: 100%;
+	
+	}
+
+
+	.modelo{
+
+		color: #ffffff;
+		font-weight: 500;
+		font-size: 40px;
+	
+	}
+
+
+
+	.duration 
+	{
+		color: #ffffff;
+		align-self: start;
+		font-weight: 500;
+		white-space: nowrap;
+		font-size: xx-large;
+	}
+
+	.fila{
+		align-self: left;
+		justify-content: left;
+		align-items: left;
+        margin-top: 20px;
+        margin-bottom: 20px;
+		
+	}
+	.imagen{
+
+		object-fit: fill;
+
+	}
+
+	.title, .acp,  .green-word{
+			display: flex;
+			color:#ffff;
+			font-size: 20px;
+			font-weight: 400;
+			text-align: left;
+			word-spacing: 5px;
+			justify-content: left;
+			line-height: 1;
+			list-style: none;
+			}
+		
+		
+			.description {
+			  color: #fff;
+			  font-weight: 200;
+			  font-size: 1rem;
+			  font-weight: 400;
+			
+			  word-spacing: 2px;
+			}
+	
+  
+			
+			button {
+			color: #fff;
+			width: 10em;
+			
+			font-size: 24px;
+			font-weight: 400;
+			border-radius: 50px;
+			padding: 12px 10px;
+			background-color: #01C938;
+			transition: border 0.2s ease;
+			}
+			button:hover {
+			color: #fff;
+			/* background color gradint tuquesa (izquierda) a  rosa (derecha)*/
+			background-image: linear-gradient(to right, #2ed5de,#2e74de, #d201d2);
+			border-color: #000000;
+			transition: 0.2s ease-in;
+			}
+		
+
+			.icono {
+			display: inline-block;
+			
+
+			
+			width: 30px;
+			height: 30px;
+			align-self: center;
+			
+			}
+			.image {
+			display: inline-block;
+		
+			width: 70px;
+			height: 70px;
+			align-self: center;
+		
+			}
+
+
+</style>

@@ -1,0 +1,187 @@
+---
+import BotonFlecha from "../../global/BotonFlecha.astro";
+---
+
+
+<section id="WatchHowToSeccion">
+
+		<div class="contenedor">
+			
+            <div class="columnaIzquierda">
+				<p class="title ">
+					Watch all HOW-TO
+                    <br>
+					videos we have for U
+				</p>
+                <p class="description">
+                    Find out about self-service options from U-wifi, like how to pay your bill, how to use the app, and all info you need to get the best experience.
+                </p>
+
+				
+	
+                <BotonFlecha texto="Go to how to videos" link="#" showIcon={false} paddingleft="20px" paddingright="20px" borderColor="transparent" borderColorHover="transparent" backgroundColor="var(--primary-buttom-color)" fontweight="500" iconColorHover="var(--tertiary-color)"/>
+			
+			
+
+            </div>
+
+	
+		</div>
+		<span class="green-ball-blured"></span>
+	
+</section>
+
+
+<style>
+	 .green-ball-blured{
+    top: -10%;
+	left: 0;
+	position: absolute;
+    width: clamp(0px, 50vw, 1000px);
+	height: clamp(0px, 50vw, 1000px);
+	border-radius: 100%;
+    background: linear-gradient(0deg, #02572b 0%, #02572a 100%);
+	filter: blur(100px);
+    opacity: 0.8;
+	z-index: -1;
+	}
+
+section
+	{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-left: clamp(0px, 5vw, 100px);
+		padding-right: clamp(0px, 5vw, 100px);
+		margin-bottom: 100px;
+	}
+	.botones{
+        position: relative;
+        z-index: 2;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		gap: 16px;
+
+	
+	}
+    .columnaIzquierda
+    {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
+        height: 100%;
+        padding: clamp(16px, 5vw, 20px);
+		gap: clamp(16px, 5vw, 40px);
+    }
+
+
+	img{
+		width: 50%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	.contenedor
+	{ 
+        position: relative;
+		display: flex;
+		flex-direction: column;
+		border-radius: 25px;
+		height: 100%;
+        background-image: url("/image/selfservicepage/familia.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        z-index: 2;
+        padding-left: clamp(0px, 5vw, 100px);
+	}
+    .contenedor::before
+    {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6); 
+        border-radius: 25px;
+        z-index: 1;
+
+    }
+
+
+	.title{
+   
+			color: var(--primary-text-color);
+			font-size: clamp(20px, 4vw, 50px);
+			font-weight: 600;
+			text-align: left;
+			text-wrap: balance;
+			text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+			height: 100%;
+			
+			}
+
+    .description{
+    
+        color: var(--primary-text-color);
+        font-size: clamp(18px, 3vw, 30px);
+        font-weight: 500;
+        text-align: left;
+        text-wrap: pretty;
+        text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        margin-top: 16px;
+		height: 100%;
+    }
+
+
+
+
+
+	@media (max-width: 900px) 
+	{
+		.contenedor
+		{
+			flex-direction: column-reverse;
+			align-items: center;
+			height: 100%;
+			padding: 16px;
+		}
+		.botones{
+			flex-direction: column;
+			align-items: center;
+			gap: 16px;
+		}
+		.columnaIzquierda{
+			align-items: center;
+			text-align: center;
+			padding: 16px;
+			width: 100%;
+		}
+		img{
+		width: clamp(100px, 50vw, 200px);
+		object-fit: contain;
+		align-self: center;
+		margin-right: 50px;
+	}
+	.title, .description{
+		text-align: center;
+		
+	}
+	}
+
+
+
+
+
+
+
+
+
+</style>

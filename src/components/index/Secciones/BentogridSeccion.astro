@@ -1,0 +1,87 @@
+---
+
+import BentoContainer from "../../global/BentoContainer.astro";
+
+
+
+---
+
+<section id="#bentogrid" class="mx-auto p-20">
+
+
+
+     <BentoContainer id={1} title="" imgSrc="image/bento/bento_1.png" rowSpan={3} colSpan={1}/>
+     <BentoContainer id={2} title="" imgSrc="image/bento/bento_2.png" rowSpan={3} colSpan={1}/>
+     <BentoContainer id={3} title="" imgSrc="image/bento/bento_3.png" rowSpan={4} colSpan={8}/>
+     <BentoContainer id={4} title="" imgSrc="image/bento/bento_4.png" rowSpan={3} colSpan={2}/>
+ 
+ 
+     <BentoContainer id={5} title="" imgSrc="image/bento/bento_5.png" rowSpan={3} colSpan={1}/>
+     <BentoContainer id={6} title="" imgSrc="image/bento/bento_6.png" rowSpan={3} colSpan={1}/>
+ 
+     <!-- <div  class="moden"><Iphone client:visible transition:persist/></div> -->
+     <BentoContainer id={8} title="" imgSrc="image/bento/bento_0.png" rowSpan={10} colSpan={8}/>
+     <BentoContainer id={8} title="" imgSrc="image/bento/bento_7.png" rowSpan={3} colSpan={1}/>
+     <BentoContainer id={9} title="" imgSrc="image/bento/bento_8.png" rowSpan={3} colSpan={1}/>
+ 
+ 
+     <BentoContainer id={10} title="" imgSrc="image/bento/bento_9.png" rowSpan={4} colSpan={2}/>
+      <BentoContainer id={11} title="" imgSrc="image/bento/bento_10.png" rowSpan={5} colSpan={2}/>
+      <BentoContainer id={12} title="" imgSrc="image/bento/bento_11.png" rowSpan={5} colSpan={1}/>
+      
+      <BentoContainer id={13} title="" imgSrc="image/bento/bento_12.png" rowSpan={5} colSpan={1}/>
+      <BentoContainer id={14} title="" imgSrc="image/bento/bento_13.png" rowSpan={7} colSpan={2}/>
+      
+      <BentoContainer id={16} title="" imgSrc="image/bento/bento_15.png" rowSpan={4} colSpan={2} objectFit='contain'/>
+      <BentoContainer id={17} title="" imgSrc="image/bento/bento_16.png" rowSpan={4} colSpan={4} objectFit='contain'/>
+      <BentoContainer id={18} title="" imgSrc="image/bento/bento_17.png" rowSpan={4} colSpan={2} objectFit='contain'/>
+      <BentoContainer id={15} title="" imgSrc="image/bento/bento_14.png" rowSpan={3} colSpan={2}/>
+</section>
+		  
+	<style>
+
+        .moden{
+       background-color: #1b1b1d;
+       border-radius: 10px;
+    
+       grid-row: span 10;
+       grid-column: span  8;
+      
+       cursor: pointer;
+       align-content: center;
+       width: 100%;
+       height: 100%;
+       box-shadow: rgb(0 0 0 / 20%) 0px 0px 0px 1px, rgb(0 0 0 / 20%) 0px 2px 4px;
+       transition: all 0.3s ease 0s;
+       padding: 1rem;
+        }
+
+		section{
+			display: grid;
+            grid-template-columns: repeat(12, minmax(6.5vw, auto));
+            grid-auto-rows: clamp(20px, 4vw, 30px);
+        
+            grid-auto-flow: row dense;
+            grid-gap: 15px;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+			height: 100%;
+		}
+        @media (max-width: 768px) {
+            section{
+                grid-template-columns: repeat(8, minmax(6.5vw, auto));
+                grid-auto-rows: clamp(20px, 4vw, 30px);
+      
+                grid-auto-flow: row dense;
+                grid-gap: 15px;
+                justify-content: center;
+                align-items: center;
+                justify-items: center;
+                height: 100%;
+            }
+        }
+    
+
+	
+ </style>

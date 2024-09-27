@@ -1,0 +1,113 @@
+---
+interface Props {
+	title: string;
+	subtitle: string;
+	iconUrl: string;
+	description: string;
+}
+const { title, subtitle, iconUrl, description } = Astro.props;
+---
+
+
+    <div class="contenedor-card">
+        <div class="flex flex-col gap-2 p-4">
+            <img class="icon" src={iconUrl} alt="icon">
+            <h1 class="title">{title}</h1>
+            <h2 class="subtitle">{subtitle}</h2>
+        </div>
+        <hr class="rounded">
+        <p class="description">{description}</p>
+       
+    </div>
+
+
+    <style>
+
+        .icon
+        {
+            width: 50px;
+            height: 50px;
+            transition: all 0.5s ease;
+            transform-origin: bottom;
+            
+     
+        }
+
+        .contenedor-card
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: flex-start;
+            width: 500px;
+            height: 100%;
+            border-radius: 20px;
+            border: 3px dashed var(--cuaternary-color);
+            padding: 20px 20px 20px 20px;
+            transition: all 0.5s ease;
+            transform-origin: bottom;
+            background-color: var(--primary-glass-color);
+            text-overflow: ellipsis " [..]";
+        }
+ 
+        hr.rounded 
+        {
+            border-top: 3px solid var(--cuaternary-color);
+            border-radius: 2px;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.5;
+        }
+        h1.title
+    {
+        font-size: clamp(10px, 10vw, 30px);
+        font-weight: 500;
+        color: var(--primary-text-color);
+        text-align: left;
+        text-shadow: 5px 5px 5px #000000;
+    }
+    h2.subtitle
+    {
+        font-size: clamp(20px, 5vw, 25px);
+        font-weight: 800;
+        color: var(--cuaternary-color);
+        text-align: left;
+        text-shadow: 5px 5px 5px #000000;
+    }
+    .description 
+    {
+       
+	    color: var(--primary-text-color);
+		font-weight: 300;
+		text-wrap: pretty;
+		font-size: clamp(14px, 1vw, 30px);
+        max-width: 100%;
+        max-height: 100%;
+        text-overflow: ellipsis;
+      
+       
+	}
+
+
+
+
+    @media (max-width: 768px) 
+	{
+     .contenedor-card{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        
+     }
+     h1.title, h2.subtitle{
+        text-align: center;
+     }
+     .icon{
+        align-self: center;
+     }
+	
+	}
+
+</style>

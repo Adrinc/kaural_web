@@ -1,0 +1,27 @@
+---
+/* ASTRO DIVIDER */
+interface AstroDividerProps {
+    key?: string;
+    height?: number;
+    thickness?: number;
+    indent?: number;
+    endIndent?: number;
+    color?: string;
+}
+
+let { 
+    key,
+    height = 0,
+    thickness = 1,
+    indent = 0,
+    endIndent = 0,
+    color = "#000000"
+}: AstroDividerProps = Astro.props;
+---
+
+<div id={key} style={`
+    height: ${height}px;
+    border-top: ${thickness}px solid ${color};
+    margin-left: ${indent}px;
+    margin-right: ${endIndent}px;
+`}></div>

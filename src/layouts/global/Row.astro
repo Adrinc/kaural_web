@@ -1,0 +1,67 @@
+---
+/* FLUTTER LIKE ROW */
+interface Props {
+    key?: string;
+    color?: string;
+    mainAxisAlignment?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
+    crossAxisAligment?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline' | 'initial' | 'inherit';
+    warp?: 'nowrap' | 'wrap' | 'wrap-reverse';
+    mainAxisSize?: 'min-content' | 'max-content' | 'fit-content' | 'fill' | 'inherit' | 'initial' | 'unset';
+    textDirection?: 'left' | 'right' | 'center' | 'end' | 'justify';
+    reverse?: boolean;
+    gap?: number;
+    flexGrow?: number;
+    flexShrink?: number;
+    padding?: number;
+}
+// Row.astro
+
+
+let { 
+    key,
+    mainAxisAlignment = 'flex-start', 
+    crossAxisAligment='flex-start', 
+    warp='nowrap', 
+    textDirection='left', 
+    mainAxisSize='max-content', 
+    color="transparent", 
+    reverse=false,  
+    gap=0,
+    flexGrow=1,
+    flexShrink=0,
+    padding=0
+    }: Props = Astro.props;
+---
+
+<div id={key} class=`flex ${reverse==true ? "flex-row-reverse" : "flex-row"}` 
+style={`
+--color: ${color};
+--mainAxisAlignment: ${mainAxisAlignment};  
+--crossAxisAligment: ${crossAxisAligment}; 
+--wrap: ${warp};
+--textDirection: ${textDirection};
+--mainAxisSize: ${mainAxisSize};
+--gap: ${gap}px;
+--flexGrow: ${flexGrow};
+--flexShrink: ${flexShrink};
+--padding: ${padding}px;
+
+`
+}>
+    <slot />
+</div>
+
+<style>
+    div {
+        justify-content: var(--mainAxisAlignment);
+        align-items: var(--crossAxisAligment);
+        flex-wrap: var(--wrap);
+        gap: var(--gap);
+        background-color: var(--color);
+        text-align: var(--textDirection);
+        flex-grow: var(--flexGrow);
+        flex-shrink: var(--flexShrink);
+        padding: var(--padding);
+    }
+
+</style>

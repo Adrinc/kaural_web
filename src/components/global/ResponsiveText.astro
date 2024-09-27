@@ -1,0 +1,34 @@
+---
+interface Props{
+    size: string;
+    minimun: string;
+    maximun: string;
+    text: string;
+    textColor?: string;
+    weight?: number;
+    fontWarp?: string;
+}
+let {text, textColor="var(--primary-text-color)", minimun, size, maximun, weight=300, fontWarp="balance"} = Astro.props;
+
+const allowedFontWarpValues = ["wrap", "nowrap", "balance", "inherit", "initial", "revert", "revert-layer", "unset"];
+const units = ["px", "rem", "em", "vw", "vh", "%"];
+
+if (!allowedFontWarpValues.includes(fontWarp)) {
+    throw new Error(`Invalid value for fontWarp: ${fontWarp}`);
+}
+
+minimun = units.some(unit => minimun.includes(unit)) ? minimun : `${minimun}rem`;
+size = units.some(unit => size.includes(unit)) ? size : `${size}vw`;
+maximun = units.some(unit => maximun.includes(unit)) ? maximun : `${maximun}rem`;
+---
+
+<p class="responsive" style=`--color: ${textColor}; --min: ${minimun}; --size: ${size}; --max: ${maximun}; --weight: ${weight}; --fontWarp: ${fontWarp};`>{text}</p>
+
+<style>
+    .responsive{
+        color: var(--textColor);
+        font-weight: var(--weight);
+        font-warp: var(--fontWarp);
+        font-size: clamp(var(--minimun), var(--average), var(--maximun));
+    }
+</style>

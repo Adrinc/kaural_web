@@ -1,0 +1,70 @@
+<div class="main-container">
+    <div class="monthly">
+      <div class="monthly-label">MONTHLY</div>
+      <div class="yearly-label">YEARLY</div>
+    </div>
+  </div>
+  
+  <style>
+    .main-container {
+      display: flex;
+      width: 259px;
+      flex-direction: column;
+    }
+  
+    .monthly {
+      border-radius: 36.5px;
+      background-color: #858585;
+      align-self: stretch;
+      display: flex;
+      width: 100%;
+      padding-right: 22px;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  
+    @media (max-width: 991px) {
+      .monthly {
+        padding-right: 20px;
+      }
+    }
+  
+    .monthly-label {
+      color: #fff;
+      text-align: center;
+      letter-spacing: 1.175px;
+      align-self: stretch;
+      white-space: nowrap;
+      border-radius: 36.5px;
+      box-shadow: 4px 0px 5px 0px rgba(0, 0, 0, 0.25);
+      background-color: #00c937;
+      width: 145px;
+      max-width: 100%;
+      padding: 30px;
+      font: 500 17px Poppins, sans-serif;
+    }
+  
+    @media (max-width: 991px) {
+      .monthly-label {
+        white-space: initial;
+        padding: 0 20px;
+      }
+    }
+  
+    .yearly-label {
+      color: #fff;
+      text-align: center;
+      letter-spacing: 1.175px;
+      align-self: center;
+      white-space: nowrap;
+      margin: auto 0;
+      font: 500 17px Poppins, sans-serif;
+    }
+  
+    @media (max-width: 991px) {
+      .yearly-label {
+        white-space: initial;
+      }
+    }
+  </style>

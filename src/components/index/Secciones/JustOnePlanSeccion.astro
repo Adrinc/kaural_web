@@ -1,0 +1,200 @@
+---
+import TarjetaPaqueteEspecial from '../../TarjetaPaqueteEspecial.astro';
+
+import * as IndexData from '../../../data/IndexQuerys.ts';
+
+let listas = [
+  { icono: 'image/checkwhite.svg', texto: '5G Wi-Fi Gateway device included' },
+  { icono: 'image/checkwhite.svg', texto: 'FREE 2 Day Shipping' },
+  { icono: 'image/checkwhite.svg', texto: 'Plug and Play Self Insall' },
+  { icono: 'image/checkwhite.svg', texto: 'Redundancy Included' },
+  { icono: 'image/checkwhite.svg', texto: 'Portable' },
+];
+
+
+---
+
+
+<section id="plan">
+  <div class="main-container">
+    
+    
+    <div class="columna-izquierda">
+      <div class="title" id="homeinternet">
+        Don't overpay for a <span class="text-tertiaryTextColor"><br>5G home internet </span><br> experience!
+        </div>
+
+
+   <div class="title" id="oneplan">
+     JUST <span class="text-tertiaryTextColor">ONE</span> PLAN?
+   </div>
+   <div class="subtitle">
+     <p>Yes, we make it  <span class="text-secondaryColor font-bold">simple.</span> </p>
+   </div>
+ 
+   <p class="description">Discover perfection in simplicity. Our single subscription has it all, without the hassle.</p>
+   <p class="description-inferior">Only the best for  <img alt="uwifi logo white" class="image" loading="lazy" srcset="faviui.png"/></span></p>
+</div>
+
+<div class="columna-derecha">
+	<span class="green-ball-blured" id="ball3"></span>
+    <TarjetaPaqueteEspecial precio="30" modelo="Value" description="The best value for your money." lista={listas}/>
+</div>
+
+</div>
+</section>
+
+
+<style>
+  .green-ball-blured{
+    top: 0%;
+		left: -30%;
+		position: absolute;
+    width: clamp(0px, 50vw, 700px);
+		height: clamp(0px, 50vw, 700px);
+		border-radius: 100%;
+    rotate: -90deg;
+    background: linear-gradient(#5746E5 20%, #48e543 40%, #03FB75 50%);
+		filter: blur(100px);
+		z-index: -1;
+	}
+  section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+	justify-content: space-between;
+  align-items: center;
+  padding-top:  clamp(0px, 5vw, 100px);
+  padding-left: clamp(0px, 5vw, 100px);
+	padding-right: clamp(0px, 5vw, 100px);
+  
+  }
+  .main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  
+    gap: clamp(0px, 5vw, 100px);
+  }
+  
+  .columna-izquierda{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    width: 100%;
+    height: 80vh;
+    gap:20px;
+
+  }
+  
+  .columna-derecha{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: center;
+    width: 50%;
+  }
+
+
+  .description, .subtitle
+  {
+    color: var(--primary-text-color);
+		font-size: clamp(1.5rem, 3vw, 30px);
+    font-weight: 400;
+    text-align: left;
+    font-family: var(--font-family-secondary);
+    max-width: 600px;
+
+    text-wrap: pretty;
+
+  }
+  .subtitle
+  {
+    line-height: normal;
+    font-weight: 600;
+    font-size: clamp(20px, 30vw, 40px);
+    font-family: var(--font-family-primary);
+
+  }
+  .description-inferior 
+  {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--primary-text-color);
+		font-size: clamp(1.5rem, 4vw, 30px);
+    font-weight: 100;
+    text-align: left;
+    gap: 8px;
+    font-family: var(--font-family-secondary);
+
+  }
+
+
+	.title{
+    
+      color: var(--primary-text-color);
+			font-size: clamp(1.5rem, 5vw, 70px);
+			font-weight: bold;
+			}
+	.title, #oneplan{
+    
+      color: var(--primary-text-color);
+			font-size: clamp(1.5rem, 5vw, 65px);
+			font-weight: 700;
+			}
+      .image {
+			display: inline-block;
+			width: clamp(30px, 5vw, 60px); 
+			height: clamp(30px, 5vw, 60px);
+      align-self: center;
+      margin-bottom: 25px;
+			}
+	#homeinternet{
+    
+      color: var(--primary-text-color);
+			font-size: clamp(1.5rem, 5vw, 65px);
+			font-weight: 500;
+      width: 100%;
+			}
+
+
+  @media (max-width: 900px) {
+    .main-container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .columna-izquierda{
+      gap:10px;
+    }
+
+	.title{
+    color: var(--primary-text-color);
+    font-size: clamp(1.5rem, 3vw, 80px);
+    font-weight: bold;
+    text-align: center;
+    }
+    .description, .description-inferior, .subtitle 
+  {
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+  }
+  .image {
+
+      margin-bottom: 10px;
+			}
+      p{
+        text-align: center;
+        align-self: center;
+      }
+
+  }
+</style>

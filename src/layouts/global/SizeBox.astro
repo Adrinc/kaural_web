@@ -1,0 +1,22 @@
+---
+
+/* ASTRO SIZED BOX */
+interface AstroSizedBoxProps {
+    key?: string;
+    width?: number;
+    height?: number;
+}
+
+let { 
+    key,
+    width,
+    height
+}: AstroSizedBoxProps = Astro.props;
+---
+
+<div id={key} style={`
+    width: ${width}px;
+    height: ${height}px;
+`}>
+    <slot />
+</div>

@@ -1,0 +1,95 @@
+---
+interface Props{
+    id:number;
+    title:string;
+    imgSrc?:string;
+    imgAlt?:string;
+    reverse?:boolean;
+    rowSpan?:number;
+    colSpan?:number;
+    objectFit?:string;
+   
+
+}
+const {id,  title, imgSrc, imgAlt, reverse=false, rowSpan=1, colSpan=1, objectFit="fill" }= Astro.props;
+let flexDirection="column";
+let showImg= "block";
+
+if (imgSrc==undefined || imgSrc==""){
+    showImg="hidden";
+}
+
+if (reverse){
+    flexDirection="column-reverse";
+}
+---
+
+<article id=`${id}` style=
+{`
+--flex-direction:${flexDirection};
+--grid-row: ${rowSpan};
+--grid-column: ${colSpan};
+--object-fit: ${objectFit};
+`
+} 
+>
+    <h1>{title}</h1>
+    <img class=`${showImg}` src={imgSrc} alt="bento object">
+
+
+
+</article>
+
+
+<style>
+    article
+    {
+       display: flex;
+       flex-direction: var(--flex-direction);
+       justify-content: center;
+       align-items: center;
+       justify-items: center;
+       background-color: #181818;
+       border-radius: 10px;
+/*        border: 4px solid #313134; */
+       grid-row: span var(--grid-row);
+       grid-column: span  var(--grid-column);
+      
+       cursor: default;
+       align-content: center;
+       width: 100%;
+       height: 100%;
+       object-fit: fill;
+       color:antiquewhite;
+       font-size: 1.5rem;
+       font-weight: 600;
+     /*   box-shadow: rgb(0 0 0 / 20%) 0px 0px 0px 1px, rgb(0 0 0 / 20%) 0px 2px 4px; */
+       transition: all 0.3s ease 0s;
+    /*    padding: 1rem; */
+   }
+    article:hover{
+         transform: scale(1.05);
+         box-shadow: rgb(0 0 0 / 20%) 0px 0px 0px 1px, rgb(0 0 0 / 20%) 0px 4px 8px;
+    }
+    article h1{
+     
+        z-index: 1;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color:antiquewhite;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px #000;
+        object-fit: cover;
+        transition: all 0.3s ease 0s;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: var(--object-fit);
+    
+
+     
+    }
+</style>

@@ -1,0 +1,22 @@
+---
+/* ASTRO EXPANDED */
+//NOTA: USAR SOLO DENTRO DE UN ROW O COLUMN
+
+interface AstroExpandedProps {
+    key?: string;
+    flexGrow?: number;
+    flexShrink?: number;
+}
+
+let { 
+    key,
+    flexGrow = 1,
+    flexShrink = 1
+}: AstroExpandedProps = Astro.props;
+---
+<div id={key} style={`
+    flex-grow: ${flexGrow};
+    flex-shrink: ${flexShrink};
+`}>
+    <slot />
+</div>

@@ -1,0 +1,28 @@
+---
+/* ASTRO TEXT */
+interface Props {
+    key?: string;
+    text?: string;
+    fontSize?: number;
+    color?: string;
+    fontWeight?: string;
+    textAlign?: string;
+}
+
+let { 
+    key,
+    text = "",
+    fontSize = 16,
+    color = "#000000",
+    fontWeight = "normal",
+    textAlign = "left"
+}: Props = Astro.props;
+---
+<div id={key} style={`
+    font-size: ${fontSize}px;
+    color: ${color};
+    font-weight: ${fontWeight};
+    text-align: ${textAlign};
+`}>
+    {text}
+</div>

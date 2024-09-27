@@ -1,0 +1,27 @@
+
+
+
+<div class="robot">
+	<img src="/image/paloma_adorno_out.png" alt="robot friend">
+
+</div>
+<style>
+	.robot {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		padding: 20px;
+		width: 100%;
+	}
+	img {
+		width: clamp(10rem, 20vw, 20rem);
+		height: clamp(10rem, 20vw, 20rem);
+	}
+
+	@media (max-width: 900px) 
+	{
+		.robot {
+			justify-content: center;
+		}
+	}
+</style>

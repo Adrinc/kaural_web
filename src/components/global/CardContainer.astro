@@ -1,0 +1,122 @@
+---
+interface Props{
+    title: string;
+    description: string;
+    imageUrl: string;
+}
+const {title, description, imageUrl} = Astro.props;
+---
+<div class="main-enroll-active-use">
+    <div class="enroll-active-use">
+        <div class="flex  flex-col items-center gap-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 99" fill="none">
+                <path d="M87.5379 72.8144L75.5762 60.8354C75.1167 60.3715 74.57 60.0032 73.9677 59.7519C73.3654 59.5006 72.7193 59.3712 72.0668 59.3712C71.4143 59.3712 70.7682 59.5006 70.1659 59.7519C69.5635 60.0032 69.0169 60.3715 68.5574 60.8354L50.8619 78.5564C50.4038 79.019 50.0414 79.5675 49.7954 80.1706C49.5494 80.7737 49.4248 81.4195 49.4285 82.0709V94.0499C49.4285 95.3627 49.9493 96.6218 50.8762 97.5501C51.8032 98.4784 53.0604 98.9999 54.3714 98.9999H66.3331C66.9836 99.0037 67.6284 98.8788 68.2307 98.6325C68.8329 98.3861 69.3806 98.0232 69.8425 97.5644L87.5379 79.8434C88.0012 79.3833 88.3689 78.8358 88.6199 78.2326C88.8708 77.6294 89 76.9824 89 76.3289C89 75.6755 88.8708 75.0285 88.6199 74.4253C88.3689 73.8221 88.0012 73.2746 87.5379 72.8144ZM64.2571 89.0999H59.3142V84.1499L72.0668 71.3789L77.0096 76.3289L64.2571 89.0999ZM34.6 89.0999H14.8286C13.5176 89.0999 12.2604 88.5784 11.3334 87.6501C10.4065 86.7218 9.8857 85.4627 9.8857 84.1499V14.85C9.8857 13.5372 10.4065 12.2781 11.3334 11.3498C12.2604 10.4215 13.5176 9.89999 14.8286 9.89999H39.5428V24.75C39.5428 28.6884 41.1051 32.4656 43.886 35.2505C46.6669 38.0354 50.4386 39.6 54.3714 39.6H69.1999V44.55C69.1999 45.8628 69.7207 47.1218 70.6477 48.0501C71.5746 48.9784 72.8319 49.5 74.1428 49.5C75.4537 49.5 76.7109 48.9784 77.6379 48.0501C78.5649 47.1218 79.0856 45.8628 79.0856 44.55V34.353C79.0341 33.8982 78.9347 33.4502 78.7891 33.0165V32.571C78.5514 32.062 78.2344 31.5942 77.8499 31.185L48.1928 1.485C47.7842 1.09997 47.317 0.7825 46.8088 0.544499C46.6613 0.523512 46.5115 0.523512 46.364 0.544499L44.7822 0H14.8286C10.8958 0 7.12408 1.56455 4.34318 4.34946C1.56229 7.13437 0 10.9115 0 14.85V84.1499C0 88.0884 1.56229 91.8655 4.34318 94.6505C7.12408 97.4354 10.8958 98.9999 14.8286 98.9999H34.6C35.9109 98.9999 37.1681 98.4784 38.0951 97.5501C39.0221 96.6218 39.5428 95.3627 39.5428 94.0499C39.5428 92.7371 39.0221 91.478 38.0951 90.5497C37.1681 89.6214 35.9109 89.0999 34.6 89.0999ZM49.4285 16.8795L62.2305 29.7H54.3714C53.0604 29.7 51.8032 29.1785 50.8762 28.2502C49.9493 27.3218 49.4285 26.0628 49.4285 24.75V16.8795ZM24.7143 59.3999H54.3714C55.6823 59.3999 56.9395 58.8784 57.8665 57.9501C58.7935 57.0218 59.3142 55.7628 59.3142 54.45C59.3142 53.1371 58.7935 51.8781 57.8665 50.9498C56.9395 50.0215 55.6823 49.5 54.3714 49.5H24.7143C23.4033 49.5 22.1461 50.0215 21.2191 50.9498C20.2922 51.8781 19.7714 53.1371 19.7714 54.45C19.7714 55.7628 20.2922 57.0218 21.2191 57.9501C22.1461 58.8784 23.4033 59.3999 24.7143 59.3999ZM24.7143 39.6H29.6571C30.968 39.6 32.2253 39.0784 33.1522 38.1501C34.0792 37.2218 34.6 35.9628 34.6 34.65C34.6 33.3371 34.0792 32.0781 33.1522 31.1498C32.2253 30.2215 30.968 29.7 29.6571 29.7H24.7143C23.4033 29.7 22.1461 30.2215 21.2191 31.1498C20.2922 32.0781 19.7714 33.3371 19.7714 34.65C19.7714 35.9628 20.2922 37.2218 21.2191 38.1501C22.1461 39.0784 23.4033 39.6 24.7143 39.6ZM34.6 69.2999H24.7143C23.4033 69.2999 22.1461 69.8214 21.2191 70.7498C20.2922 71.6781 19.7714 72.9371 19.7714 74.2499C19.7714 75.5628 20.2922 76.8218 21.2191 77.7501C22.1461 78.6784 23.4033 79.1999 24.7143 79.1999H34.6C35.9109 79.1999 37.1681 78.6784 38.0951 77.7501C39.0221 76.8218 39.5428 75.5628 39.5428 74.2499C39.5428 72.9371 39.0221 71.6781 38.0951 70.7498C37.1681 69.8214 35.9109 69.2999 34.6 69.2999Z" fill="white"/>
+                </svg>
+            <p class="title">Enroll</p>
+        </div>
+        <p class="description">
+            Complete a short questionnaire to 
+            check if you qualify for Lifeline and 
+            the Affordable Connectivity Program 
+            (ACP), a federal initiative ensuring 
+            broadband access for all Americans.</p>
+    </div>
+
+
+<style>
+        svg{
+        width: clamp(50px, 20vw, 80px);
+        height: clamp(50px, 20vh, 80px);
+    }
+
+    .main-enroll-active-use{
+        display:flex;
+        flex-direction: row;
+        flex-grow: 1;
+        justify-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        gap: clamp(0px, 10vw, 20px);
+        padding: clamp(0px, 10vw, 20px);
+        margin-top: 50px;
+    }
+    .main-enroll-active-use .title{
+        font-size: clamp(12px, 40vw, 40px);
+        text-align: justify;
+        text-justify: inter-word;
+        text-wrap: pretty;
+    }
+    .main-enroll-active-use .description{
+        font-size: clamp(12px, 20vw, 18px);
+        text-align: justify;
+        font-weight: 100;
+        text-wrap: pretty;
+        padding: clamp(0px, 10vw, 12px);
+    }
+    .enroll-active-use{
+        position: relative;
+      
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px;
+        background-color: rgb(0, 0, 0);
+        border: 3px solid #ffffff;
+        box-shadow: 10px 10px 0 0px #000000;
+        width: clamp(50px, 70vw, 450px);
+        inset: 0;
+        border-radius: 15px;
+       
+
+    }
+    .enroll-active-use::after{
+   
+        position: absolute;
+        content: "";
+        background-color: var(--secondary-color);
+        border-color: #5746E5;
+        inset: 1rem -20px -20px 1rem;
+        border-radius: 1rem;
+        z-index: -10;
+    }
+    
+    .description {
+                  color: var(--primary-text-color);
+                  font-weight: 100;
+                  font-size: clamp(1rem, 8vw, 1.8rem);
+                  justify-content: center;
+                  text-align: center;
+                  font-family: var(--font-family-secondary);
+                  margin-bottom:40px;
+                }
+    
+
+                @media (max-width: 768px) {
+        .main-enroll-active-use{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 100px;
+        }
+    }
+    
+    @media (max-width: 450px) {
+    
+        .main-enroll-active-use{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: clamp(50px, 80vw, 450px);
+            gap: 2rem;
+            padiding: 0px;
+        }
+        .botones {
+				flex-direction: column;
+				align-items: center;
+				bottom: 5%;
+				
+		
+				}
+    }
+</style>

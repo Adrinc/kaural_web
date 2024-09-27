@@ -1,0 +1,82 @@
+---
+import AuroraBoreal from './AuroraBoreal.astro';
+---
+
+<span>
+
+	<span class="green-ball-blured" id="ball1"></span>
+	<span class="green-ball-blured" id="ball2"></span>
+	<span class="green-ball-blured" id="ball3"></span>
+</span>
+<!-- <AuroraBoreal /> -->
+
+<style>
+    	.green-ball-blured{
+		position: absolute;
+		width: 100vw;
+		rotate: 50deg;
+		overflow-wrap: normal;
+		background: linear-gradient(#5746E5 20%, #8743E5 40%, #20b340, #03FB75 100%);
+		filter: blur(100px);
+		z-index: -1;
+	
+	}
+	#ball1{
+
+		top: 0;
+		left: 50%;
+		width: clamp(0px, 50vw, 800px);
+		height: clamp(0px, 50vw, 800px);
+		border-radius: 100%;
+		rotate: -45deg;
+		background: linear-gradient(#5746E5 20%, #8743E5 40%, #03FB75 100%);
+		z-index: -1;
+		&::after{
+		
+		position: static;
+
+	
+	}
+	}
+	#ball2{
+
+		top: 15%;
+		left: 25%;
+		width: clamp(0px, 50vw, 700px);
+		height: clamp(0px, 50vw, 700px);
+		border-radius: 100%;
+	
+		
+	
+	
+		background: linear-gradient(#5746E5 20%, #48099f 40%);
+		z-index: -1;
+		&::after{
+		
+		position: static;
+
+	
+	}
+	}
+	#ball3{
+	
+		top: 30%;
+		left: 50%;
+		width: clamp(0px, 50vw, 500px);
+		height: clamp(0px, 50vw, 500px);
+		border-radius: 100%;
+		rotate: -90deg;
+		background: linear-gradient(#5746E5 20%, #48e543 40%, #03FB75 50%);
+		z-index: -1;
+		&::after{
+		
+			position: static;
+
+		
+		}
+	}
+
+
+
+
+</style>

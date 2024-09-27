@@ -1,0 +1,101 @@
+<div class="main-container">
+    <img loading="lazy" srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/b7f45c54-79dc-492c-a979-eb8b20a2cc5c?apiKey=99b0eaa04efc41a78ff2850239e1f525&width=100"class="image" />
+    <nav class="navigation">
+      <a href="#" class="selected-link">HOME</a>
+      <a href="#" class="link">PLANS</a>
+      <a href="#" class="link">DEVICES</a>
+      <a href="#" class="link">DEALS</a>
+      <a href="#" class="link">COVERAGE</a>
+      <a href="#" class="link">FAQ</a>
+    </nav>
+    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/19775a3f-e559-4fca-9726-f6a6a94313b8?apiKey=99b0eaa04efc41a78ff2850239e1f525&" class="image-2" />
+  </div>
+  
+  <style>
+
+    .main-container {
+
+    
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: clamp(20px, 5%, 40px);
+      border-bottom: #fff 2px solid;
+      backdrop-filter: blur(10px); 
+      justify-content: space-between;
+ 
+    }
+  
+ 
+  
+    .image {
+      aspect-ratio: 3.86;
+      object-fit: contain;
+      object-position: center;
+      width: clamp(10px, 10rem, 250px);
+
+      overflow: hidden;
+      align-self: stretch;
+      max-width: 100%;
+    }
+  
+    .navigation {
+      align-self: center;
+      display: flex;
+      width: auto-fit;
+      max-width: 100%;
+      align-items: flex-start;
+      gap: clamp(10px, 2vw, 20px);
+    
+    }
+  
+
+    .link, .selected-link{
+      color: #ffffff;
+      text-shadow:  2px 2px 0px #000000;
+      text-transform: uppercase;
+      align-self: start;
+      font-weight: 800;
+      font-size: clamp(14px, 1.5vw, 24px);
+    }
+    .selected-link {
+      color: #00c402;
+
+    }
+  
+    .image-2 {
+     
+      object-fit: contain;
+      object-position: center;
+      width: 69px;
+      overflow: hidden;
+      align-self: center;
+      justify-self: end;
+  
+    }
+
+    @media screen and (max-width: 768px) {
+     
+    
+      .image-2 {
+        width: 50px;
+        height: 50px;
+        align-self: center;
+      }
+    }
+    @media screen and (max-width: 550px) {
+      .main-container{
+        grid-template-columns: 1fr 1fr;
+       
+      }
+      .navigation {
+        display: none;
+      }
+      .image-2 {
+       display:none;
+      }
+      
+    }
+
+  
+
+  </style>

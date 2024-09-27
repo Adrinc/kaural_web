@@ -1,0 +1,303 @@
+---
+import BuyOrApplyFree from './global/BuyOrApplyFree.astro';
+interface Props {
+	precio: string;
+	modelo: string;
+	description: string;
+	lista: {
+		icono: string;
+		texto: string;
+	}[];
+}
+
+const { precio, modelo, description, lista } = Astro.props;
+---
+
+<div class="contenedor-tarjeta">
+    <div class="tarjeta">
+        <div>
+			<h1 class="title">SUPER 5G</h1>
+			<div class="precio-contenedor">
+				<p class="price">${precio}</p>
+				<p class="text-white text-xl text-left max-md:text-sm"> /month with <span class="text-white font-bold text-xl text-left"> AutoPay</span></p> 
+			</div>
+			<p class="title self-start">FREE for ACP Suscribers</p>
+		</div>
+       
+
+
+			<ul class="fila">
+				
+				  <li class="description">
+					<span class="icono">
+					  <img alt="icono check"  class="image" src="image/checkwhite.svg"/>
+					</span>
+					5G Wi-Fi Gateway device included
+				  </li>
+				  <li class="description">
+					<span class="icono">
+					  <img alt="icono check"  class="image" src="image/checkwhite.svg"/>
+					</span>
+					<span class=" font-bold">FREE</span>
+					<span> 2 Day Shipping</span>
+				  </li>
+				  <li class="description">
+					<span class="icono">
+					  <img alt="icono check"  class="image" src="image/checkwhite.svg"/>
+					</span>
+					Plug and Play 
+					<span class=" font-bold">Self Insall</span>
+				  </li>
+				  <li class="description">
+					<span class="icono">
+					  <img alt="icono check"  class="image" src="image/checkwhite.svg"/>
+					</span>
+					Redundancy Included
+				  </li>
+				  <li class="description">
+					<span class="icono">
+					  <img alt="icono check"  class="image" src="image/checkwhite.svg"/>
+					</span>
+					Portable (Take it with    <img alt="uwifi white logo" class="uwifiicon" src="image/ublanca.svg"/>    )
+				  </li>
+		
+			</ul>
+        
+        
+      
+<div class="buyOrApply">
+
+	<BuyOrApplyFree direction='column'/>
+</div>
+      
+		<p class="description"><span class=" font-bold">CALL NOW! </span> (123)456-789-000</p>
+		<a href="/" class="link">See more details</a>
+    </div>
+</div>
+
+
+
+
+
+
+<style>
+	.buyOrApply{
+		scale: 0.8;
+	}
+
+	.contenedor-tarjeta
+	{
+		align-content: flex-start;
+		width: clamp(300px, 50vw, 500px);
+		height: clamp(800px, 100vw, 900px);
+		border-radius: 20px;
+		padding: clamp(4px, 30vw, 30px);
+		background:  linear-gradient(180deg, #00C937 0%, #7A47DD 100%);
+	}
+	.link{
+		display:flex;
+		color: #ffffff72;
+		font-weight: 400;
+		font-style: normal;
+		justify-content: center;
+		align-items: center;
+		font-size: clamp(1rem, 50vw, 1.5rem);
+		text-decoration: underline;
+		transition: 0.2s ease-in;
+	}
+	.link:hover{
+		color: #ffffff;
+		font-weight: 500;
+		
+		
+		text-decoration: underline;
+		transition: 0.2s ease-in;
+	}
+
+	.precio-contenedor{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+		align-self: center;
+		gap:10px;
+		padding-left: clamp(1rem, 50vw, 4rem);
+		padding-right: clamp(1rem, 50vw, 4rem);
+	}
+
+
+	.tarjeta
+	{
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		flex-wrap: nowrap;
+		
+		justify-content: space-evenly;
+		align-items: center;
+		height: 100%;
+	
+		gap: 10px;
+		
+	}
+
+	.price 
+	{
+		color: #ffffff;
+		font-weight: 700;
+		font-size: clamp(1.5rem, 50vw, 5rem);
+		text-align: right;
+  	}
+	.modelo{
+
+		color: #ffffff;
+		font-weight: 500;
+		font-size: 40px;
+	
+	}
+
+
+
+	.duration 
+	{
+		color: #ffffff;
+		align-self: start;
+		font-weight: 500;
+		white-space: nowrap;
+		font-size: xx-large;
+	}
+
+	.fila{
+		display: flex;
+		flex-direction: column;
+		
+		justify-content: center;
+		align-self: self-start;
+		
+		gap:10px;
+	
+		
+	}
+	.imagen{
+
+		object-fit: fill;
+	
+	}
+
+
+
+	.title{
+			display: flex;
+			color:#ffff;
+			font-size: clamp(20px, 5vw, 35px);
+			font-weight: bold;
+			text-align: center;
+			justify-content: center;
+			
+	
+			}
+	
+		
+			.description {
+			display:flex;
+			flex-direction: row;
+		
+		
+			align-items: center;
+			justify-content: flex-start;
+			line-height: normal;
+			  color: #fff;
+			  font-weight: 200;
+			  font-size: clamp(14px, 3vw, 22px);
+			  font-weight: 400;
+			  word-spacing: 2px;
+			  gap:10px;
+			}
+	
+  
+			
+			button {
+			color: #fff;
+			width: 10em;
+			
+			font-size: 24px;
+			font-weight: 400;
+			border-radius: 50px;
+			padding: 12px 10px;
+			background-color: #01C938;
+			transition: border 0.2s ease;
+			}
+			button:hover {
+			color: #fff;
+			background-image: linear-gradient(to right, #2ed5de,#2e74de, #d201d2);
+			border-color: #000000;
+			transition: 0.2s ease-in;
+			}
+		
+
+			.icono {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			align-self: center;
+			
+			}
+			.image {
+			display: flex;
+			width: clamp(10px, 50vw, 30px);
+			height: clamp(10px, 50vw, 30px);
+			align-self: center;
+		
+			
+			}
+			.uwifiicon{
+			display: flex;
+			width: 22px;
+			height: 22px;
+			align-self: safe;
+			}
+
+			@media (max-width: 768px) {
+				.title{
+			display: flex;
+			color:#ffff;
+			font-size: clamp(20px, 5vw, 25px);
+			font-weight: bold;
+			text-align: center;
+			justify-content: center;
+			
+	
+			}
+			.price 
+	{
+		font-weight: 500;
+		font-size: clamp(1.5rem, 50vw, 40px);
+		
+  	}
+	  .description {
+			display:flex;
+			flex-direction: row;
+		
+		
+			align-items: center;
+			justify-content: flex-start;
+			  color: #fff;
+			  font-weight: 200;
+			  font-size: clamp(14px, 3vw, 22px);
+			  font-weight: 400;
+			  word-spacing: 2px;
+			  gap:0px;
+			}
+		.contenedor-tarjeta
+		{
+		align-content: center;
+		width: clamp(300px, 50vw, 500px);
+		height: clamp(800px, 50vh, 100vh);
+		border-radius: 20px;
+		padding: clamp(4px, 30vw, 30px);
+		background:  linear-gradient(180deg, #00C937 0%, #7A47DD 100%);
+		}
+	}
+
+</style>

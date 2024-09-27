@@ -1,0 +1,174 @@
+---
+import BotonFlecha from "../../global/BotonFlecha.astro";
+---
+
+
+<section id="heroabout">
+
+		<div class="contenedor">
+			<div class="columnaIzquierda">
+				<p class="title ">
+					Enhancing wireless excellence with every upgrade, while keeping it affordable.
+					Our Success Numbers
+					
+				</p>
+
+				<div class="botones">
+	
+					<BotonFlecha texto="Read more" link="/signup"  backgroundColor="#7f44e5" borderColor="transparent" iconColor="#ffffff"  fontweight="500"/>
+					<BotonFlecha texto="Contact us" link="/contact"  borderColor="#ffffff" iconColor="#ffffff" fontweight="500"/>
+				</div>
+			</div>
+			<div class="columnaDerecha">
+				<img src="/image/manwhitmac.png" alt="man with mac">
+			</div>
+		</div>
+		<span class="green-ball-blured"></span>
+	
+</section>
+
+
+<style>
+	.botones{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		gap: 16px;
+
+	}
+	 .green-ball-blured{
+    top: -10%;
+	left: 0;
+	position: absolute;
+    width: clamp(0px, 50vw, 1000px);
+	height: clamp(0px, 50vw, 1000px);
+	border-radius: 100%;
+    background: linear-gradient(0deg, #02572b 0%, #02572a 100%);
+	filter: blur(100px);
+    opacity: 0.8;
+	z-index: -1;
+	}
+	section
+	{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		box-sizing: border-box;
+		padding-left: clamp(0px, 5vw, 100px);
+		padding-right: clamp(0px, 5vw, 100px);
+		margin-top: 150px;
+		margin-bottom: 100px;
+		width: 100vw;
+		height: 90vh;
+	}
+	img{
+		width: 70%;
+		height: 100%;
+	}
+	.columnaIzquierda{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		width:50%;
+		height: 100%;
+		padding: clamp(0px, 5vw, 50px);
+		gap: clamp(0px, 1vw, 100px);
+	}
+	.columnaDerecha{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 50%;
+		height: 100%;
+	}
+	.contenedor
+	{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		border-radius: 10px;
+		background-color: #00b33e;
+		height: 80%;
+	}
+	.title{
+			color: var(--primary-text-color);
+			font-size: clamp(24px, 3vw, 50px);
+			font-weight: 600;
+			
+			text-align: left;
+			text-wrap: pretty;
+			text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+			
+			}
+
+
+
+
+
+
+
+	@media (max-width: 900px) 
+	{
+		section{
+			 height: 100vh;
+		}
+		.contenedor
+		{
+			flex-direction: column-reverse;
+			align-items: center;
+			height: 100vh;
+			padding: 16px;
+		
+		}
+		.botones{
+			flex-direction: column;
+			align-items: center;
+			height: 100%;
+			gap: 16px;
+		}
+		.columnaIzquierda{
+			align-items: center;
+			text-align: center;
+			padding: 16px;
+			width: 100%;
+			height: 50%;
+		
+		
+		}
+		.columnaDerecha{
+			width: 50%;
+			height: 50%;
+		}
+	
+		img{
+		width: 100%;
+		height: 100%;
+	
+		
+	}
+	.title{
+		text-align: center;
+		
+	}
+	}
+
+	@media (height < 500px) 
+	{
+		.title{
+			font-size: clamp(14px, 3vw, 20px);
+		}
+		.contenedor
+		{
+			height: 100vh;
+		}
+		.columnaIzquierda{
+			padding: 16px;
+			height: 100%;
+		}
+
+	}
+
+
+</style>

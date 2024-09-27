@@ -1,0 +1,136 @@
+---
+import FilaImagenTexto from "../FilaImagenTexto.astro";
+
+---
+
+<section id="app">
+    <span class="green-ball-blured"></span>
+    <span class="multi-ball-blured"></span>
+    <span class="purple-ball-blured"></span>
+    <div>
+        <div class="contenedor">
+            <div class="title">
+            <span class="text-tertiaryTextColor">U-wifi </span>Mobile App
+            </div>
+        </div>
+        <div class="contenedor">
+            <div class="subtitle">
+                Take control of your home internet with one <span class="text-secondaryColor">simple app.</span>
+            </div>
+        </div>
+    </div>
+
+
+    <FilaImagenTexto 
+    image="/image/App1.png"
+    title="Setup’s quick. Just download the app." 
+    subtitle=" Step-by-step, we’ll make setup a breeze for your T-Mobile 5G Wi-Fi Gateway."  
+    flex="row"/>
+
+    <FilaImagenTexto 
+    image="/image/App2.png"
+    title="Location matters." 
+    subtitle="For the best possible connection, use the interactive placement assistant in the app to pinpoint the ideal location for your gateway."  
+    flex="row-reverse"/>
+
+    <FilaImagenTexto 
+    image="/image/App3.png"
+    title="Keep an eye on your internet connection." 
+    subtitle="Make sure your internet connection is at its best and get help tackling issues with your Wi-Fi network manager."  
+    flex="row"/>
+
+    <FilaImagenTexto 
+    image="/image/App4.png"
+    title="See who’s online." 
+    subtitle="Quickly identify each device that’s connected to your network."  
+    flex="row-reverse"/>
+
+    <FilaImagenTexto 
+    image="/image/App5.png"
+    title="Set parental controls." 
+    subtitle="A few simple taps and you can control which devices connect to Wi-Fi and when. You have the power."  
+    flex="row"/>
+
+    <div>
+
+</section>
+
+
+<style>
+    .green-ball-blured{
+    top: 20%;
+	left: 70%;
+	position: absolute;
+    width: clamp(200px, 50vw, 600px);
+	height: clamp(200px, 50vw, 600px);
+	border-radius: 100%;
+    background: #0a5702;
+	filter: blur(150px);
+	z-index: -1;
+	}
+    .multi-ball-blured{
+	position: absolute;
+    top: 70%;
+	left: 0%;
+    width: clamp(200px, 50vw, 700px);
+	height: clamp(200px, 50vw, 700px);
+	border-radius: 100%;
+    rotate: 90deg;
+    background: linear-gradient(180deg, rgba(3, 251, 117, 0.50) 0%, rgba(6, 255, 240, 0.50) 100%);
+	filter: blur(150px);
+	z-index: -1;
+	}
+    .purple-ball-blured{
+	position: absolute;
+    top: 80%;
+	left: -10%;
+    width: clamp(200px, 50vw, 600px);
+	height: clamp(200px, 50vw, 600px);
+	border-radius: 100%;
+    rotate: 90deg;
+    background: linear-gradient(180deg, rgba(87, 70, 229, 0.50) 0%, rgba(135, 67, 229, 0.50) 52.6%, rgba(0, 198, 55, 0.50) 100%);
+	filter: blur(70px);
+	z-index: -1;
+	}
+
+      section{
+        position:relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: clamp(0px, 10vw, 100px);
+        gap:20px;
+    }
+    	.contenedor{
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		text-wrap: pretty;
+	}
+	.title{
+	
+    color: var(--primary-text-color);
+    font-size: clamp(1.5rem, 5vw, 80px);
+    font-weight: 400;
+    text-wrap: balance;
+    }
+    .subtitle{
+    color: var(--primary-text-color);
+    font-size: clamp(1.5rem, 5vw, 60px);
+    font-weight: 600;
+    text-wrap: balance;
+    font-family: var(--font-family-secondary);
+    text-warp: balance;
+    }
+    @media (max-width: 768px) {
+        .title, .subtitle{
+            text-align: center;
+        }
+        .contenedor{
+        justify-content: center;
+    }
+}
+
+
+
+</style>

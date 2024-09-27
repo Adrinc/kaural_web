@@ -1,0 +1,136 @@
+
+<section>
+
+
+<div class="contenedor">
+	<div class="title">
+		Only <span class="text-primaryColor">TWO</span> steps to enroll
+    </div>
+</div>
+
+    <div class="row">
+            <h1>1</h1>
+            <div class="capsula">
+                <p class="description"> Go to  <a href="https://www.affordableconnectivity.gov/" class="text-primaryColor font-bold hover:text-white transition-all">ACPBenefit.org</a> to submit an application or print out a mail-in application.</p>
+            </div>
+    </div>
+    <div class="row">
+            <h1>2</h1>
+            <div class="capsula">
+                <p class="description"> Contact your local RTA office to sign up to select a plan and have the discount applied to your bill.</p>
+            </div>
+    </div>
+	
+</section>
+
+<style>
+
+section{
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        padding: clamp(0px, 10vw, 100px);
+        gap:100px;
+        padding-bottom: 100px;
+    }
+    .columna{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+     
+      
+
+    }
+    .row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        gap:20px;
+        width: 100%;
+        
+  
+    }
+  
+    h1{
+       
+        display: flex;
+        color: var(--primary-text-color);
+        border-radius: 50px;
+        background-color: var(--secondary-color);
+        width: clamp(20px, 10vw, 100px);
+        height: clamp(20px, 10vh, 100px);
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        font-size: clamp(1.5rem, 5vw, 32px);
+        text-shadow:  2px 2px 0px #000000;
+    }
+    .vertical-line{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        border-left: 4px solid var(--secondary-color);
+        height: 100px;
+  
+    }
+    
+
+	.contenedor{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		text-wrap: pretty;
+		padding-left: clamp(0px, 10vw, 100px);
+		padding-right: clamp(0px, 10vw, 100px);
+		padding-top: clamp(10px, 10vw, 100px);
+	
+	}
+
+    .description {
+  
+    color: var(--primary-text-color);
+	font-size: clamp(1rem, 3vw, 30px);
+    font-weight: 100;
+    text-align: left;
+    text-wrap: pretty;
+    text-shadow:  2px 2px 0px #000000;
+
+    }
+    .capsula{
+     display: flex;
+    color: var(--primary-text-color);
+    text-align: left;
+    width: 100%;
+   
+    border-radius: 100px;
+    align-items: center;
+    background-image: linear-gradient(to right, #5746E5, #8743E5, #00C637);
+    box-shadow: 0px 0px 10px 0px var(--secondary-color);
+    padding: clamp(0px, 10vw, 20px);
+    }
+
+
+	.title{
+	
+		color: var(--primary-text-color);
+		font-size: clamp(1.5rem, 5vw, 80px);
+		font-weight: 400;
+	}
+
+    @media (max-width: 768px) {
+        .title{
+            font-size: clamp(2rem, 5vw, 80px);
+            text-align: center;
+        }
+        .capsula{
+            border-radius: 10px;
+        }
+    }
+
+</style>

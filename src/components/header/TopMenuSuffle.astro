@@ -1,0 +1,28 @@
+---
+import RiveComponent from "../global/animations/riveComponent";
+
+ let currentUrl = new URL(Astro.request.url, Astro.site).pathname;
+
+ const navItems = [
+  { name: 'HOME', url: '/' },
+  { name: 'ACP', url: '/#acp' },
+  { name: 'PLAN', url: '/#plan' },
+  { name: 'HOW?', url: '/#howit' },
+  { name: 'APP', url: '/#app' },
+  { name: '5G', url: '/#5g' },
+];
+---
+
+
+
+
+    
+  <RiveComponent 
+  src="/rive/cbluna.riv" 
+  artboard="navbar"
+
+  autoplay={true} 
+  transition:persist 
+  fit="fill"
+  client:only/>
+

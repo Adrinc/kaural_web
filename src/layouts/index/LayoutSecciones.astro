@@ -1,0 +1,64 @@
+---
+interface Props{
+	marginTop:string;
+}
+
+const { marginTop  } = Astro.props;
+
+---
+
+
+<section class=" max-h-fit mb-20" style={`margin-top: ${marginTop};`}>
+	<div class="main-container">
+		<div class="columna-izquierda">
+			<slot name="col-izquierda"/>
+		</div>
+
+
+		<div class="columna-derecha">
+			<slot name="col-derecha"/>
+		</div>
+
+	</div>
+</section>  
+
+
+<style>
+
+		section{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 100%;
+		
+		}
+
+        .main-container {
+			  display: grid;
+			  grid-template-columns: 1fr 1.2fr;
+			  justify-content: space-between;
+			  align-content: space-between;
+			  gap: 1.2rem;
+			
+			}
+			.columna-izquierda{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			  	align-items: space-between;
+			  	
+			}
+			.columna-derecha{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			  	align-items: center;
+			  	
+			}
+
+			@media screen and (max-width: 900px) {
+			  .main-container {
+			    grid-template-columns: 1fr;
+			  }
+			}
+</style>

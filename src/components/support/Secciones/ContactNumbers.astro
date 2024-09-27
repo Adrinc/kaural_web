@@ -1,0 +1,181 @@
+---
+
+
+const dataIzquierda = [
+        { 
+        title: 'Purchasing at U-wifi', 
+        rows:[
+        "Residential for-U: 1-800-123-UWIFI",
+        "Business for-U: 1-800-123-UWIFI"
+        ] 
+        },
+        { 
+        title: 'General Customer Care & Technical Support', 
+        rows:[
+        "From the U-app, on your phone.",
+        "From your phone: 111",
+        "Call: 1-800-123-UWIFI",
+        "So we can troubleshoot with you."
+        ] 
+        },
+        { 
+        title: 'U-wifi High Speed Internet Support', 
+        rows:[
+        "U-wifi 5G Home Internet Sales: 1-800-123-UWIFI",
+        "U-wifi 5G Home Internet Tech Support: 1-800-123-UWIFI"
+        ] 
+        },
+        { 
+        title: 'International Callers', 
+        rows:[
+        "Call: 1-800-123-UWIFI",
+        "All calls made to this number from a",
+        "Customer Care representatives are available daily from 4 a.m. to Midnight PST."
+        ] 
+        },
+    ];
+    const dataDerecha = [
+        { 
+        title: 'Short Codes', 
+        rows:[
+        'Just dial the short-code below as if you were making a phone call (information is not available via text message), hit "Send," and we’ll give you the info you need. It’s fast, easy, and free!',
+        "For your account balance and last payment received info."
+        ] 
+        },
+        { 
+        title: 'Contact us - TTY', 
+        rows:[
+        "TTY service is available for people who are Deaf, Hard of Hearing or have a Speech Disability.",
+        "Dial 111 to reach a Relay Agent."
+        ] 
+        }
+    ];
+    
+---
+
+
+<section id="contactnumbers">
+
+    <h1>CONTACT NUMBERS</h1>
+    <div class="contactNumbersContainer">
+
+        <div class="columnaIzquierda">
+            {dataIzquierda.map((item) => (
+                <div class="mb-8 gap-4">
+                    <h2 class="carttile">{item.title}</h2>
+                    <p class="description">
+                        {item.rows.map((row) => (
+                            <p>{row}</p>
+                        ))}
+                    </p>
+                </div>
+            ))
+            }
+        </div>
+
+        <div class="columnaDerecha">
+            {dataDerecha.map((item) => (
+                <div class="mb-8 gap-8">
+                    <h2 class="carttile">{item.title}</h2>
+                    <p class="description">
+                        {item.rows.map((row) => (
+                            <p>{row}</p>
+                        ))}
+                    </p>
+                </div>
+            ))
+            }
+        </div>
+        <span class="green-ball-blured" id="ball1"></span>
+    </div>
+  
+
+</section>
+
+
+<style>
+    .contactNumbersContainer{
+        display:flex;
+        justify-content: space-between;
+        gap: clamp(20px, 5vw, 32px);
+    }
+    .columnaIzquierda, .columnaDerecha{
+        width: 50%;
+    }
+   
+    .green-ball-blured{
+		position: absolute;
+		top: 0;
+		left: 55%;
+		width: clamp(400px, 50vw, 800px);
+		height: clamp(400px, 50vw, 800px);
+		border-radius: 100%;
+		
+		rotate: -90deg;
+	
+		filter: blur(100px);
+		z-index: -1;
+		background: linear-gradient(#28206b 20%, #4a1297 40%, #048b43 100%);
+	}
+ 	section{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        block-size: auto;
+        padding-left: clamp(20px, 50vw, 100px);
+        padding-right: clamp(20px, 50vw, 100px);
+        gap: 60px;
+        margin-bottom: 100px;
+    }
+    h1,h2{
+        color: var(--primary-text-color);
+        font-size: clamp(2rem, 5vw, 50px);
+        font-weight: 700;
+        display: block;
+        text-wrap: balance;
+        text-align: left;
+    }
+    h2{
+        font-size: clamp(16px, 5vw, 50px);
+    }
+    .carttile{
+	    color: var(--tertiary-text-color);
+	    font-size: clamp(20px, 5vw, 25px);
+	    font-weight: 500;
+	    display: block;
+	    text-wrap: balance;
+	    text-align: left;  
+	    }
+    .description, p {
+	  color: var(--primary-text-color);
+	  font-weight: 300;
+	  text-wrap: pretty;
+	  font-size: clamp(14px, 3vw, 25px);
+	  display: block;
+      max-width: 50vw;
+      margin-bottom: 0.5rem;
+    
+	}
+    @media (max-width: 900px)
+    {
+        section{
+					padding-left: clamp(20px, 5vw, 50px);
+				padding-right: clamp(20px, 5vw, 50px);
+				
+				}
+        .contactNumbersContainer{
+            flex-direction: column;
+            align-items: center;
+        }
+        .columnaDerecha, .columnaIzquierda{
+            width: 100%;
+        }
+        .description, p {
+            max-width: 100%;
+        }
+        h1{
+            text-align: center;
+        }
+    
+    }
+</style>

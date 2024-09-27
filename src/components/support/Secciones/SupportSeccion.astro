@@ -1,0 +1,85 @@
+---
+import BotonFlecha from "../../global/BotonFlecha.astro";
+---
+
+
+<section id="faq&support">
+
+
+    <p class="title flex align-middle justify-center mb-8">SUPPORT</p>
+    <div class="doted">
+		<p class="description flex align-middle justify-center text-center">Save time and manage your account online with our Self-service Center or using  <span class="font-bold">U-app.</span></p>
+		<BotonFlecha link="/support/selfservice" texto="CHECK IT OUT" backgroundColor="#00c207" iconColor="#ffffff"/>
+	</div>
+   
+	<span class="green-ball-blured"></span>
+</section>
+
+
+<style>
+    .green-ball-blured{
+    top: -90%;
+	left: 0;
+	position: absolute;
+    width: clamp(0px, 50vw, 600px);
+	height: clamp(0px, 50vw, 600px);
+	border-radius: 100%;
+    background: linear-gradient(0deg, #022c16 0%, #02572a 100%);
+	filter: blur(100px);
+    opacity: 0.8;
+	z-index: -1;
+	}
+ 	section{
+		position: relative;
+        display: flex;
+        flex-direction: column;
+        padding-left: clamp(20px, 50vw, 100px);
+        padding-right: clamp(20px, 50vw, 100px);
+        margin-top: 150px;
+		margin-bottom: 100px;
+    }
+    .title{
+	    color: var(--primary-text-color);
+	    font-size: clamp(40px, 5vw, 60px);
+	    font-weight: 400;
+	    display: block;
+	    text-wrap: balance;
+	    text-align: center  
+	    }
+    .description {
+	  color: var(--primary-text-color);
+	  font-weight: 300;
+	  text-wrap: pretty;
+	  font-size: clamp(14px, 3vw, 30px);
+	  display: block;
+    
+	}
+
+	.doted{
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		vertical-align: middle;
+		align-items: center;
+		border-style: dashed;
+		border-width: 2px;
+		border-radius: 0.375rem;
+		margin-bottom: 32px;
+		border-color: var(--primary-color);
+		padding: clamp(8px, 5vw, 30px);
+		gap: clamp(20px, 5vw, 50px);
+	}
+
+	@media (max-width: 900px)
+    {
+		.doted{
+			flex-direction: column;
+			width: 100%;
+		
+		}
+    	section{
+		padding-left: clamp(20px, 5vw, 50px);
+		padding-right: clamp(20px, 5vw, 50px);
+		}
+    }
+</style>

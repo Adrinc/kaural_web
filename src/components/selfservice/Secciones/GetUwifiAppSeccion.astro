@@ -1,0 +1,205 @@
+---
+import BotonFlecha from "../../global/BotonFlecha.astro";
+---
+
+
+<section id="heroabout">
+
+		<div class="contenedor">
+			<div class="columnaIzquierda">
+				<p class="title ">
+					Get the U-wifi app and
+                    <br>
+					get more for U.
+					
+				</p>
+                <p class="description"> Easily pay your bill, manage your account, upgrade your indormation, and contact our support team.</p>
+            
+
+				<div class="botones">
+					<div>
+						<img class="logoBoton" src="/image/AppStore.png" alt="app store logo">
+					</div>
+					<div>
+						<img class="logoBoton" src="/image/AndroidStore.png" alt="google play logo">
+					</div>
+					<div class="botonconflecha">
+						<BotonFlecha texto="Find out more" link="#" marginTopIncon="5px" paddingleft="0px" borderColor="transparent" borderColorHover="transparent"  fontweight="500" iconColor="var(--tertiary-color)" fontsize="30px" />
+
+					</div>
+				</div>
+			</div>
+
+			<div>
+
+				<img class="smartphone" src="/image/selfservicepage/App2cut.png" alt="man with mac">
+			</div>
+		</div>
+		<span class="green-ball-blured"></span>
+	
+</section>
+
+
+<style>
+	.botones{
+		display: flex;
+		flex-direction: row;
+        flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 16px;
+		object-fit: contain;
+	}
+	.logoBoton{
+		width: clamp(100px, 20vw, 150px);
+		object-fit: contain;
+	}
+	 .green-ball-blured{
+    top: -10%;
+	left: 0;
+	position: absolute;
+    width: clamp(0px, 50vw, 1000px);
+	height: clamp(0px, 50vw, 1000px);
+	border-radius: 100%;
+    background: linear-gradient(0deg, #02572b 0%, #02572a 100%);
+	filter: blur(100px);
+    opacity: 0.8;
+	z-index: -1;
+	}
+	section
+	{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		box-sizing: border-box;
+		padding-left: clamp(0px, 5vw, 100px);
+		padding-right: clamp(0px, 5vw, 100px);
+		margin-bottom: 100px;
+		margin-top: 100px;
+	
+	}
+	.smartphone{
+		width: 100%;
+		height: 100%;
+		object-fit: fill;
+
+        max-width: 500px;
+	}
+	.columnaIzquierda{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width:60%;
+		height: 100%;
+		padding: clamp(8px, 50vw, 50px);
+		gap: clamp(8px, 50vw, 20px);
+
+	}
+	.contenedor
+	{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		border-radius: 10px;
+		background-color: #00b33e;
+		height: 100%;
+	
+        padding: clamp(8px, 3vw, 50px) clamp(8px, 3vw, 120px) 0px clamp(8px, 3vw, 50px);
+	
+		
+	}
+	.title{
+			color: var(--primary-text-color);
+			font-size: clamp(24px, 3vw, 60px);
+			font-weight: 700;
+			
+			text-align: left;
+			text-wrap: balance;
+			text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+			
+			}
+    .description{
+        color: var(--primary-text-color);
+        font-size: clamp(20px, 3vw, 45px);
+        font-weight: 400;
+        text-align: left;
+        text-wrap: balance;
+        text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+
+
+
+
+
+	@media (max-width: 900px) 
+	{
+	
+		.contenedor
+		{
+			flex-direction: column-reverse;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			padding: 20px;
+			gap: 0px;
+	
+		}
+		.botones{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			width: 100%;
+	
+			
+
+		}
+		.logoBoton{
+			width: clamp(100px, 50vw, 150px);
+			object-fit: contain;
+			align-self: center;
+			
+		}
+		.columnaIzquierda{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			width: 100%;
+			padding: clamp(8px, 5vw, 50px);
+			gap: clamp(8px, 5vw, 50px);
+		}
+		.smartphone{
+		width: clamp(100px, 50vw, 200px);
+		object-fit: contain;
+		align-self: center;
+		
+	}
+	.title, .description{
+		text-align: center;
+		
+	}
+	.botonconflecha{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-self: center;
+		width: 100%;
+		padding-left: clamp(8px, 5vw, 12px);
+		scale: 1.1;
+	}
+	}
+	@media screen and (height< 450px) 
+	{
+
+		
+	}
+			
+
+
+
+
+
+</style>

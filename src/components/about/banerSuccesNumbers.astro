@@ -1,0 +1,183 @@
+
+<div class="baner">
+    <span class="backbox"></span>
+    <span class="frontbox"></span>
+    <h1>Our Success Numbers</h1>
+    <div class="contenedor">
+
+       <div class="cajas-contenedor">
+        <img class="icon" src="/icons/cajitaicon.svg" alt="cajita icon">
+        <p class="box-title">+20K</p>
+        <p>Delivered Gateways</p>
+       </div>
+
+       <div class="divider"></div>
+
+       <div class="cajas-contenedor">
+        <img class="icon" src="/icons/staricon.svg" alt="cajita icon">
+        <p class="box-title">+8K</p>
+        <p>5 stars ratings</p>
+       </div>
+
+       <div class="divider"></div>
+
+       <div class="cajas-contenedor">
+        <img class="icon" src="/icons/twopeopleicon.svg" alt="cajita icon">
+        <p class="box-title">+2K</p>
+        <p>Connected Clients</p>
+       </div>
+
+       <span class="green-ball-blured"></span>
+    </div>
+</div>
+
+<style>
+     .green-ball-blured{
+		position: absolute;
+		top: -10%;
+		left: 65%;
+		width: clamp(400px, 50vw, 700px);
+		height: clamp(400px, 50vw, 700px);
+		border-radius: 100%;
+		
+		rotate: -90deg;
+	
+		filter: blur(100px);
+		z-index: -100;
+		background: linear-gradient(#4d3ecf 20%, #731ee9 40%, #05e46d 100%);
+	}
+    .divider {
+    border-left: 4px solid rgba(3, 63, 3, 0.416);
+    height: 200px;
+    }
+    .icon {
+        width: clamp(20px, 3vw, 60px);
+        height: clamp(20px, 3vw, 60px);
+    }
+    .box-title {
+        font-size: clamp(16, 3vw, 50px);
+        font-weight: 700;
+        color: var(--primary-text-color);
+    }
+    .contenedor {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+  
+        margin-top: 20px;
+        width: 70%;
+        background-color: #0e5717;
+        border-radius: 15px;
+        padding: clamp(5px, 3vw, 100px);
+        gap: clamp(0px, 3vw, 100px);
+    }
+    .cajas-contenedor {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: clamp(100px, 20vw, 300px);
+        height: clamp(100px, 20vw, 300px);
+       
+        padding: 20px;
+    }
+    .baner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: clamp(550px, 50vw, 700px);
+        width: 100vw;
+        z-index: 5;
+        margin-bottom: 100px;
+      
+    }
+    .backbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 98%;
+        background-color: var(--primary-color);
+        
+        opacity: 0.5;
+        z-index: -2;
+    }
+    .frontbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--cuaternary-color);
+        clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);
+        z-index: -1;
+    }
+    h1{
+	
+    color: var(--primary-text-color);
+    font-size: clamp(14px, 8vw, 50px);
+    font-weight: bold;
+    text-wrap: balance;
+    text-align: center;
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+    p{
+    color: var(--primary-text-color);
+    font-size: clamp(1rem, 3vw, 30px);
+    font-weight: 300;
+    text-wrap: pretty;
+    text-align: center;
+    }
+
+
+
+
+    @media (max-width: 768px) 
+	{
+        .contenedor{
+            flex-direction: column;
+            width: 90%;
+            height: 80%;
+            object-fit: contain;
+        }
+        .divider {
+            border-left: 0px;
+            border-bottom: 4px solid rgba(3, 63, 3, 0.416);
+            width: 100%;
+            height: 10px;
+        }
+        .backbox {
+            height: 100%;
+        }
+        .frontbox {
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        }
+        .cajas-contenedor {
+            flex-direction: row;
+            justify-content: space-between;
+        
+            width: 100%;
+            object-fit: contain;
+            gap: 20px;
+           
+        }
+        .icon {
+            width: 40px;
+            height: 40px;
+        }
+        p{
+            font-weight: 500;
+        }
+	
+	}
+	
+	@media screen and (height< 450px) 
+	{
+
+		
+	}
+			
+</style>

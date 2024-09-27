@@ -1,0 +1,33 @@
+
+.question{
+    font-size: clamp(1.5rem, 2.5vw, 25px);
+    font-weight: 800;
+
+    cursor: pointer;
+   
+
+}
+
+.answer{
+    font-size: clamp(1rem, 2.5vw, 20px);
+    font-weight: 400;
+    color: var(--primary-text-color);
+    margin-top: 2rem;
+
+}
+.dropbutton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: transparent;
+    border-bottom: 2px solid #ffff;
+    cursor: pointer;
+    width: 100%;
+    color: var(--primary-text-color);
+    transition: all 0.3s ease;
+    border-radius: 10px 10px 0 0;
+}
+.dropbutton:hover{
+    color: var(--primary-color);
+    background-color: #2323239f;
+}

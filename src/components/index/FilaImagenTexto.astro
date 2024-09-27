@@ -1,0 +1,94 @@
+---
+import ResponsiveText  from '../global/ResponsiveText.astro';
+
+interface Props{
+    image:string;
+	title:string;
+    subtitle:string;
+    flex:string;
+}
+
+const { image, title, subtitle, flex  } = Astro.props;
+
+
+---
+<!-- <ResponsiveText minimun='1rem' size='5vw' maximun='60px' text="hola" textColor='#ff00ff'/> -->
+  <div class="fila-imagen-texto" 
+  style={`
+  --flex-direction: ${flex};
+  `
+    }>
+        <img src={image} alt={title}/>
+        <div class="columna">
+            <p class="title-columna">
+                {title}
+            </p>
+      
+            <p class="subtitle-columna">
+                {subtitle}
+            </p>
+        </div>
+  
+  </div>
+
+<style>
+    .fila-imagen-texto{
+        display: flex;
+        flex-direction: var(--flex-direction);
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        text-align: left;
+        text-wrap: pretty;
+        gap: clamp(0px, 5vw, 50px);
+    }
+
+    .columna{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: center;
+        width: 100%;
+        height: 100%;
+        text-wrap: pretty;
+        gap: clamp(0px, 5vw, 50px);
+    }
+
+    .title-columna{
+    color:var(--primary-text-color);
+    font-size: clamp(1rem, 5vw, 50px);
+    font-weight: 600;
+    text-wrap: balance;
+    }
+    .subtitle-columna{
+    color:var(--primary-text-color);
+    font-size: clamp(1rem, 5vw, 30px);
+    font-weight: 400;
+    text-wrap: pretty;
+    font-family: var(--font-family-secondary);
+    }
+
+    img{
+        width: clamp(0px, 50vw, 220px);
+        height: clamp(0px, 50vh, 350px);
+    }
+
+    @media (max-width: 768px) {
+        .columna{
+        align-items: center;
+
+    }
+        .fila-imagen-texto{
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        img{
+            width: clamp(0px, 50vw, 150px);
+            height: clamp(0px, 50vh, 350px);
+        }
+
+    }
+</style>

@@ -1,0 +1,146 @@
+---
+import BotonFlecha from "../../BotonFlecha.astro";
+
+
+---
+
+<div class="main-popup-contenedor ">
+    <div class="popup-contenedor animate-jump-in">
+
+        <div class="flex flex-row items-center align-middle justify-end flex-grow">
+            <buttom class=" cursor-pointer flex bg-secondaryColor justify-center items-center w-[50px] h-[50px] text-primaryTextColor font-bold text-center text-[40px] rounded hover:text-[45px] hover:bg-primaryColor transition-all ">X</buttom>
+        </div>
+        
+        <div class="popup">
+            
+            
+            <img src="/image/UWIFIColor.png" alt="logo">
+            <p class="title">Find the services near your area</p>
+            
+            <div class="formulaire">
+                <div>
+                    <p class="title">Step 1: Find your Adress</p>
+                    <p class="subtitle">Enter your adress location</p>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <div class="input-icon">
+                   
+                        <svg alt-arial="button icon" xmlns="http://www.w3.org/2000/svg" class="icono" viewBox="0 0 512 512"><path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9 448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16 16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z"/><path d="M490.91 244.15l-74.8-71.56V64a16 16 0 00-16-16h-48a16 16 0 00-16 16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14 8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0043 267.56L250.5 69.28a8 8 0 0111.06 0l207.52 198.28a16 16 0 0022.59-.44c6.14-6.36 5.63-16.86-.76-22.97z"/></svg>
+                        <input type="text" class="input-field" placeholder="Address Search" />
+                    </div>
+                    <div class="input-icon">
+                        <svg alt-arial="button icon" xmlns="http://www.w3.org/2000/svg" class="icono" viewBox="0 0 512 512"><circle cx="256" cy="192" r="32"/><path d="M256 32c-88.22 0-160 68.65-160 153 0 40.17 18.31 93.59 54.42 158.78 29 52.34 62.55 99.67 80 123.22a31.75 31.75 0 0051.22 0c17.42-23.55 51-70.88 80-123.22C397.69 278.61 416 225.19 416 185c0-84.35-71.78-153-160-153zm0 224a64 64 0 1164-64 64.07 64.07 0 01-64 64z"/></svg>
+                        <input type="text" class="input-field" placeholder="Zipcode" />
+                    </div>
+                </div>
+                
+            </div>
+            <BotonFlecha texto="check for services" link="#" />
+        </div>
+    </div>
+</div>
+    
+
+
+
+
+<style>
+    input{
+        border-radius: 20px;
+        padding: 8px;
+    }
+    input::placeholder { 
+    color: rgb(60, 0, 128);
+}
+.input-icon {
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icono {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        fill:antiquewhite;
+    }
+
+    .input-field {
+        padding-left: 40px; 
+    }
+
+
+
+
+    .main-popup-contenedor{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+}
+    .popup-contenedor{
+    width: clamp(100px, 80vw, 750px);
+    height: clamp(100px, 80vw, 700px);
+    padding: clamp(10px, 2vw, 50px);
+    border-radius: 25px;
+    background-color: #0d0b11;
+}
+.popup{
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+.popup .tittle{
+    width: clamp(100px, 50vw, 450px);
+}
+.formulaire .title{
+    width: clamp(100px, 50vw, 450px);
+    font-size: clamp(10px, 5vw, 32px);
+    font-weight: 600;
+}
+
+.formulaire{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+
+    border-radius: 25px;
+    background-image: linear-gradient(to right, #5746E5, #8743E5);
+    padding: clamp(10px, 2vw, 50px);
+    gap: 20px;
+}
+img{
+    width: 220px;
+    height: 70px;
+  
+}
+
+.title{
+        display: flex;
+        color:#ffff;
+        font-size: clamp(20px, 2vw, 80px);
+        font-weight: 800;
+        text-align: center;
+        justify-content: center;
+        list-style: none;
+        }
+.subtitle{
+        display: flex;
+        color:#ffff;
+        font-size: clamp(20px, 2vw, 20px);
+        font-weight: 400;
+        text-align: center;
+        justify-content: center;
+        list-style: none;
+        }
+</style>

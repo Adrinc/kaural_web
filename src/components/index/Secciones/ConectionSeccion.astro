@@ -1,0 +1,153 @@
+---
+import BotonFlecha from "../../global/BotonFlecha.astro";
+import Baner5GWifi from "../Baner5GWifi.astro";
+
+import App from "../../react_components/Rivetest/RiveTest.jsx";
+
+---
+<section  id="5g">
+    <Baner5GWifi />
+    <div class="main-container">
+        
+        
+        <div class="rive-animation">
+            <App transition:persist client:only/>
+        </div>
+  <!--   <div class="row-conection">
+        <img src="/image/conection.svg" alt="">
+    </div> -->
+
+    <div class="row-how-5g">
+        <div class="column-left-how-5g">
+            <div class="title">How our 5G internet is different</div>
+            <div class="description">While cable internet relies on wired connections, UWIFI Internet uses the power of over-the-air 5G to provide reliable connectivity where wires can’t reach. Plus, we won’t tangle you up in long-term contracts.</div>
+        </div>
+        <div class="column-right-how-5g">
+            <div class="title">How our 5G home internet works</div>
+            <div class="description">UWIFI 5G network is built on a series of cell sites that use radio waves to send and receive data. Your gateway converts the nearest 5G signal into Wi-Fi, allowing you to access the internet wirelessly.</div>
+        </div>
+    </div>
+
+  
+        <p class="title-big">Does the placement of your 5G gateway matter?</p>
+
+        <div class="row-how-5g">
+            <div class="column-left-how-5g">
+                <div class="title">How our 5G internet is different</div>
+                <div class="description">window facilitates a strong connection to the closest 5G cell tower or data hub, resulting in faster download and upload speeds, lower latency, and increased capacity compared to locations with weaker connections.</div>
+                <BotonFlecha texto="Device Details" link="/#" />
+            </div>
+          
+            <div class="flex flex-row bg-slate-400 w-[600px] h-[300px] rounded-lg"></div>
+          
+        </div>
+
+    </div>
+</section>
+
+
+<style>
+
+section{
+   
+    padding-top: 100px;
+    margin-top: 5vh;
+}
+.main-container 
+{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(0px, 10vw, 100px);
+    gap: 100px;
+    
+}
+.rive-animation{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+
+/*     background-color: rgb(30, 30, 30); */
+}
+.row-conection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.row-how-5g{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: clamp(0px, 20vw, 100px);
+   
+}
+.column-left-how-5g{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: clamp(10px, 5vw, 1rem);
+}
+.column-right-how-5g{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  
+    gap: clamp(10px, 5vw, 1rem);
+}
+.title 
+  {
+    color:var(--primary-text-color);
+	font-size: clamp(1rem, 3vw, 40px);
+    font-weight: bold;
+    text-align: left;
+    text-wrap: balance;
+  }
+  .description
+  {
+    color:var(--primary-text-color);
+	font-size: clamp(1rem, 5vw, 1.5rem);
+    font-weight: 100;
+    text-align: justify;
+    text-wrap: pretty;
+    font-family: var(--font-family-secondary);
+  }
+  .title-big{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color:var(--primary-text-color);
+    font-size: clamp(1rem, 10vw, 3rem);
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .row-how-5g{
+        flex-direction: column;
+    }
+    .title-big,.title
+    {
+        text-align: center;
+    }
+    .description
+    {
+        text-align: justify;
+    }
+    .column-left-how-5g,.column-right-how-5g
+    {
+        align-items: center;
+    }
+
+}
+</style>

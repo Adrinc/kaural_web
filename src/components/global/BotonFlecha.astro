@@ -1,0 +1,179 @@
+---
+interface Props {
+	texto?: string;
+	link: string;
+	backgroundColor?: string;
+	borderColor?: string;
+	borderColorHover?:string;
+	borderWidth?: number;
+	textColor?: string;
+	textColorHover?: string;
+	iconColor?: string;
+	iconColorHover?: string;
+	gradientColorLeft?: string;
+	gradientColorCenter?: string;
+	gradientColorRight?: string;
+	width?: string;
+	fontweight?: string;
+	fontsize?: string;
+	showIcon?: boolean;
+	paddingleft?: string;
+	paddingright?: string;
+	marginLeftIncon?: string;
+	marginRightIncon?: string;
+	marginTopIncon?: string;
+	marginBottomIncon?: string;
+}
+
+const {showIcon=true, marginLeftIncon="0px", marginRightIncon="0px", marginTopIncon="0px", marginBottomIncon="0px", paddingleft="12px", paddingright="8px", fontsize="20px", fontweight="200",  width="auto", texto="-----", link, backgroundColor="transparent", iconColor='#f5dd96', iconColorHover='#f5dd96', borderColor = "#a09382", borderColorHover ='transparent',  borderWidth=2, textColor='#ededed', textColorHover='#ffffff', gradientColorLeft='#a76743', gradientColorRight='#f5dd96'   } = Astro.props;
+---
+<a href={link}>
+    <button class="button-learn flex flex-row-reverse align-middle items-center justify-center md:text-[1.3vw] text-[14px] font-semibold tracking-[-.03em] gap-3" aria-label={texto}
+	data-text={texto}
+	style={
+	`
+	--display-icon: ${showIcon ? "block" : "none"};
+	--padding-left: ${paddingleft};
+	--padding-right: ${paddingright};
+	--margin-left-icon: ${marginLeftIncon};
+	--margin-right-icon: ${marginRightIncon};
+	--margin-top-icon: ${marginTopIncon};
+	--margin-bottom-icon: ${marginBottomIncon};
+	--font-size: ${fontsize};
+	--font-weight: ${fontweight};
+	--background-color: ${backgroundColor};
+	--text-color: ${textColor};
+	--text-color-hover: ${textColorHover};
+	--icon-color: ${iconColor};
+	--icon-color-hover: ${iconColorHover};
+	--border-color: ${borderColor};
+	--border-color-hover: ${borderColorHover};
+	--border-width: ${borderWidth}px;
+	--gradient-left: ${gradientColorLeft}; 
+	--gradient-right: ${gradientColorRight};
+	--width: ${width};
+	`
+	}>
+		
+	<div  class={`${backgroundColor !="transparent" ? "bg-white" : `bg-[#e4f6fa]`} icono rounded-full p-1`}>
+		<svg xmlns="http://www.w3.org/2000/svg" height="22" viewBox="0 -960 960 960" width="22"><path fill={iconColor} d="M632.652-592.346 298.696-258.391q-15.522 15.522-37.044 15.24-21.522-.283-37.043-15.805-15.522-15.522-15.522-37.327 0-21.804 15.522-37.326l333.39-333.39H285.652q-22.087 0-37.543-15.457-15.457-15.457-15.457-37.544 0-22.087 15.457-37.544 15.456-15.457 37.543-15.457h400q22.088 0 37.544 15.457 15.457 15.457 15.457 37.544v400q0 22.087-15.457 37.544-15.456 15.457-37.544 15.457-22.087 0-37.543-15.457-15.457-15.457-15.457-37.544v-272.346Z"/></svg>
+	</div>
+
+	
+</button>
+</a>
+
+
+<style>
+
+.icono{
+	stroke: var(--icon-color);
+	vertical-align: middle;
+	display: var(--display-icon);
+	margin-left: var(--margin-left-icon);
+	margin-right: var(--margin-right-icon);
+	margin-top: var(--margin-top-icon);
+	margin-bottom: var(--margin-bottom-icon);
+	transition: stroke 1s ease-in-out;
+}
+.icono:hover{
+	stroke: var(--icon-color-hover);
+	color: var(--icon-color-hover);
+	transition: stroke 1s ease-in-out;
+}
+  
+.button-learn {
+position: relative;
+color:var(--text-color);
+background: var(--background-color);
+text-align: var(--text-align);
+border-radius: 25px;
+border: var(--border-width) solid;
+border-color: var(--border-color);
+padding: 8px;
+padding-left: var(--padding-left);
+padding-right: var(--padding-right);
+transition: all 0.5s ease;
+width: clamp(100px, 50vw, var(--width));
+vertical-align: middle;
+
+
+
+box-shadow: var(--primary-buttom-fill-shadow);
+}
+
+.button-learn svg {
+  position: relative;
+  z-index: 3;
+}
+
+.button-learn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, var(--gradient-left), var(--gradient-right));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  border-radius: 50px;
+  z-index: 0;
+}
+
+
+.button-learn::after {
+  content: attr(data-text);
+  position: relative;
+  z-index: 2;
+  color: var(--text-color);
+}
+.button-learn:hover {
+color: var(--text-color-hover);
+background-color: transparent;
+
+border-color: var(--border-color-hover);
+transition: all 0.5s ease;
+}
+.button-learn:hover::before {
+  opacity: 1;
+}
+.button-learn:hover::after {
+  color: var(--text-color-hover);
+}
+
+.image {
+width: clamp(0.5rem, 1vw, 85px);
+height: clamp(0.5rem, 1vw, 85px);
+}
+@media (max-width: 768px) {
+	.button-learn {
+		font-size: clamp(12px, 20vw, 20px);
+		padding: clamp(8px, 1vw, 12px);
+		text-align: center;
+	}
+
+		
+	}
+@media (max-width: 450px) {
+	.button-learn {
+		padding: clamp(8px, 1vw, 12px);
+	}
+	.icono{
+	display:none;
+	}
+
+		
+	}
+@media  screen and (height< 391px) {
+	.button-learn {
+		padding: 8px;
+		align-self: center;
+		font-weight: 600;
+		color: aqua;
+	}
+	.icono{
+	display:none;
+}
+	}
+</style>

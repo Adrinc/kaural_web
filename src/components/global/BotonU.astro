@@ -1,0 +1,171 @@
+---
+interface Props {
+	texto?: string;
+	link?: string;
+	backgroundColor?: string;
+	borderColor?: string;
+	borderColorHover?:string;
+	borderWidth?: number;
+	textColor?: string;
+	textColorHover?: string;
+	gradientColorLeft?: string;
+	gradientColorCenter?: string;
+	gradientColorRight?: string;
+	width?: string;
+	fontweight?: string;
+	fontsize?: string;
+	showIcon?: boolean;
+	paddingleft?: string;
+	paddingright?: string;
+	marginLeftIncon?: string;
+	marginRightIncon?: string;
+	marginTopIncon?: string;
+	marginBottomIncon?: string;
+}
+
+const {showIcon=true, marginLeftIncon="10px", marginRightIncon="0px", marginTopIncon="0px", marginBottomIncon="0px", paddingleft="20px", paddingright="12px", fontsize="24px", fontweight="200",  width="auto", texto="Discover all we have for  ", link="#", backgroundColor="transparent", borderColor = '#ffffff', borderColorHover ='transparent',  borderWidth=3, textColor='var(--primary-text-color)', textColorHover='#ffffff', gradientColorLeft='#2ed5de',gradientColorCenter='#2e74de', gradientColorRight='#d201d2'   } = Astro.props;
+---
+<a href={link}>
+    <button class="button-learn flex flex-row-reverse align-middle items-center justify-center" aria-label={texto}
+	data-text={texto}
+	style={
+	`
+	--display-icon: ${showIcon ? "block" : "none"};
+	--padding-left: ${paddingleft};
+	--padding-right: ${paddingright};
+	--margin-left-icon: ${marginLeftIncon};
+	--margin-right-icon: ${marginRightIncon};
+	--margin-top-icon: ${marginTopIncon};
+	--margin-bottom-icon: ${marginBottomIncon};
+	--font-size: ${fontsize};
+	--font-weight: ${fontweight};
+	--background-color: ${backgroundColor};
+	--text-color: ${textColor};
+	--text-color-hover: ${textColorHover};
+	--border-color: ${borderColor};
+	--border-color-hover: ${borderColorHover};
+	--border-width: ${borderWidth}px;
+	--gradient-left: ${gradientColorLeft}; 
+	--gradient-center: ${gradientColorCenter}; 
+	--gradient-right: ${gradientColorRight};
+	--width: ${width};
+	`
+	}>
+	
+
+    <img loading="lazy" alt="uwifi white logo" class="icono" src="/image/uwifiblancoicon.png"/> 
+
+
+		
+</button>
+</a>
+
+
+<style>
+
+.icono{
+
+	vertical-align: middle;
+	display: var(--display-icon);
+	margin-left: var(--margin-left-icon);
+	margin-right: var(--margin-right-icon);
+	margin-top: var(--margin-top-icon);
+	margin-bottom: var(--margin-bottom-icon);
+	transition: stroke 1s ease-in-out;
+}
+
+  
+.button-learn {
+position: relative;
+color:var(--text-color);
+background: var(--background-color);
+font-size: clamp(10px, 20vw, var(--font-size));
+text-align: var(--text-align);
+font-weight: var(--font-weight);
+border-radius: 50px;
+border: var(--border-width) solid;
+border-color: var(--border-color);
+padding: 12px;
+padding-left: var(--padding-left);
+padding-right: var(--padding-right);
+transition: all 0.5s ease;
+width: clamp(100px, 50vw, var(--width));
+vertical-align: middle;
+}
+.button-learn svg {
+  position: relative;
+  z-index: 3;
+}
+
+.button-learn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, var(--gradient-left), var(--gradient-center), var(--gradient-right));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  border-radius: 50px;
+  z-index: 0;
+}
+
+
+.button-learn::after {
+  content: attr(data-text);
+  position: relative;
+  z-index: 2;
+  color: var(--text-color);
+}
+.button-learn:hover {
+color: var(--text-color-hover);
+background-color: transparent;
+
+border-color: var(--border-color-hover);
+transition: all 0.5s ease;
+}
+.button-learn:hover::before {
+  opacity: 1;
+}
+.button-learn:hover::after {
+  color: var(--text-color-hover);
+}
+
+.image {
+width: clamp(0.5rem, 1vw, 85px);
+height: clamp(0.5rem, 1vw, 85px);
+}
+@media (max-width: 768px) {
+	.button-learn {
+		font-size: clamp(12px, 20vw, 20px);
+		padding: clamp(8px, 1vw, 12px);
+		text-align: center;
+	}
+
+		
+	}
+@media (max-width: 450px) {
+	.button-learn {
+		font-size: clamp(8px, 10vw, 16px);
+		padding: clamp(8px, 1vw, 12px);
+	}
+	.icono{
+	display:none;
+	}
+
+		
+	}
+@media  screen and (height< 391px) {
+	.button-learn {
+		font-size: clamp(8px, 10vh, 16px);
+		padding: 8px;
+		align-self: center;
+		font-weight: 600;
+		color: aqua;
+	}
+	.icono{
+	display:none;
+}
+	}
+</style>

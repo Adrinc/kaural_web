@@ -1,0 +1,158 @@
+<div class="benefits-grid">
+    <div class="benefits-contenedor">
+        <h1 class="title">Discover all the </h1>
+            <span class="benefits">benefits 
+                    <span class="title"> of </span>
+                    <img alt="discover all benefits" class="image" loading="lazy" srcset="faviui.png"/>
+                    <span class="title">WIFI</span>
+            </span>
+    </div>
+
+    <div class="benefits-opciones">
+        <div class="benefits-opciones-fila">
+            <div class="line-clamp-1 text-3xl text-lef text-white">Service type</div>
+            <button>Unlimited</button>
+            <button>Internet</button>
+            <button>Calling</button>
+            <button>Media</button>
+        </div>
+            
+    </div>
+</div>
+
+
+
+<style>
+
+            .benefits-grid{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                text-align: left;
+                height: 250px;
+            }
+            .benefits-contenedor{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: left;
+                gap: 20px;
+            }
+        
+            .benefits-opciones{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                text-align: left;
+            }
+            .benefits-opciones-fila{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                align-content: center;
+                text-align: left;
+                gap: 20px;
+            }
+    
+    
+    
+    
+    
+    
+        .title, .acp,  .benefits{
+                display: flex;
+                color:#ffff;
+                font-size: 90px;
+                font-weight: 400;
+                text-align: left;
+                word-spacing: 5px;
+                justify-content: left;
+                line-height: 1;
+                list-style: none;
+                }
+                .acp{
+                    color: #7C47DD;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
+                .benefits{
+                    color: #00c402;
+                    display: flex;
+                    flex-direction: row;
+                    gap:20px;
+                    
+                }
+    
+            
+                .description {
+                  color: #fff;
+                  font-weight: 100;
+                  font-size: 30px;
+                  justify-content: center;
+                  text-align: center;
+                  width: 1500px;
+                  margin-bottom:40px;
+                }
+        
+      
+                .button-learn {
+                color: #fff;	
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 200;
+                border-radius: 50px;
+                border: 3px solid #00c402;
+                padding: 12px 50px;
+                background-color: transparent;
+                transition: border 0.2s ease;
+            
+                }
+                .button-learn:hover {
+                color: #fff;
+                /* background color gradint tuquesa (izquierda) a  rosa (derecha)*/
+                background-image: linear-gradient(to right, #2ed5de,#2e74de, #d201d2);
+                border-color: #000000;
+                transition: 0.2s ease-in;
+                }
+    
+    
+                .benefits-opciones-fila button {
+                font-weight: 300;
+                color: #fff;
+                font-size: 20px;
+                border-radius: 50px;
+                border: 1px solid #ffffff;
+                background-color: transparent;
+                transition: border 0.2s ease;
+                width: 130px;
+                }
+                .benefits-opciones-fila button:hover {
+                color: #fff;
+                /* background color gradint tuquesa (izquierda) a  rosa (derecha)*/
+                background-image: linear-gradient(to right, #2ed5de,#2e74de, #d201d2);
+                border-color: #000000;
+                transition: 0.2s ease-in;
+                }
+    
+                .icono {
+                display: inline-block;
+                
+                }
+                .image {
+                display: inline-block;
+            
+                width: 85px;
+                height: 85px;
+            
+                }
+    
+        @media (max-width: 1250px) {
+            .benefits-grid{
+                display: grid;
+                grid-template-columns: 1fr;
+                text-align: left;
+            
+            }
+    }
+    </style>
+

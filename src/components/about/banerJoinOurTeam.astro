@@ -1,0 +1,79 @@
+---
+import BotonFlecha from "../global/BotonFlecha.astro";
+
+
+---
+
+<div class="baner">
+    <h1>Join Our Team!</h1>
+    <p>Do you want to be part of the Internet Pros team?</p>
+    <div class="boton">
+
+        <BotonFlecha texto="Join the Team!" link="#" backgroundColor='#01c938' width='300px' iconColor='#01c938' fontweight='500'/>
+    </div>
+</div>
+
+<style>
+    .baner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-image: url("/image/baner.png");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        width: 100%;
+        margin-bottom: 200px;
+    }
+    .boton {
+        position: relative;
+        z-index: 2;
+    }
+
+    .baner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6); 
+        z-index: 1;
+    }
+
+    h1, p {
+        position: relative;
+        z-index: 2;
+    }
+
+    h1 {
+        color: var(--primary-text-color);
+        font-size: clamp(30px, 5vw, 50px);
+        font-weight: bold;
+        text-wrap: balance;
+        text-align: center;
+    }
+
+    p {
+        color: var(--primary-text-color);
+        font-size: clamp(1rem, 3vw, 35px);
+        font-weight: 500;
+        text-wrap: pretty;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 768px) 
+	{
+        .baner {
+            height: 300px;
+        }
+     p{
+        text-align: center;
+        width: 80%;
+     }
+	
+	}
+</style>

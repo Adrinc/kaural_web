@@ -1,0 +1,148 @@
+---
+
+import BotonFlecha from "../../global/BotonFlecha.astro"
+
+let buttons = [
+    {
+        texto: "CREATE AN ACCOUNT",
+        link: "#"
+    },
+    {
+        texto: "DOWNLOAD THE APP",
+        link: "#"
+    },
+    {
+        texto: "PAY YOUR BILL",
+        link: "#"
+    }
+]
+---
+
+
+
+
+<section id="simpletools">
+    
+       <div class="row-title">
+           <h1 class="title">Use these simple tools to manage your account and stay connected with <span class="font-bold">U-app.</span></h1>
+       </div>
+        
+        
+   
+        <div class="row-buttons">
+            {
+                buttons.map((buttons) => (
+                    <BotonFlecha {...buttons} showIcon={false} paddingleft="20px" paddingright="20px" borderColor="transparent" borderColorHover="transparent" backgroundColor="var(--primary-buttom-color)" fontweight="300" iconColorHover="var(--tertiary-color)"/>
+                ))
+            }
+        </div>
+
+
+   
+        <span class="green-ball-blured"></span>
+
+</section>
+
+
+<style>
+
+section
+	{
+        position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		padding-left: clamp(0px, 5vw, 100px);
+		padding-right: clamp(0px, 5vw, 100px);
+        margin-bottom: 100px;
+		height: 60vh;
+	}
+    .green-ball-blured{
+    top: 20%;
+	left: 70%;
+	position: absolute;
+    width: clamp(0px, 50vw, 700px);
+	height: clamp(0px, 50vw, 700px);
+	border-radius: 100%;
+    background: linear-gradient(0deg, #057e41 0%, #02572a 100%);
+	filter: blur(100px);
+    opacity: 0.7;
+	z-index: -1;
+	}
+    .row-title
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .row-buttons
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 20px;
+       
+    }
+   
+    hr.rounded {
+    border-top: 5px solid var(--cuaternary-color);
+    border-radius: 5px;
+    width: 100px;
+    margin-bottom: 10px;
+    }
+    h1.title
+    {
+        font-size: clamp(16px, 5vw, 45px);
+        font-weight: 500;
+        color: var(--primary-text-color);
+        text-align: center;
+    }
+    h2.subtitle
+    {
+        font-size: clamp(20px, 5vw, 40px);
+        font-weight: 800;
+        color: var(--cuaternary-color);
+        text-align: center;
+        width: 70%;
+    }
+    .description 
+    {
+       position: relative;
+	    color: var(--primary-text-color);
+		font-weight: 300;
+		text-wrap: pretty;
+		font-size: clamp(16px, 3vw, 28px);
+        
+        width: 50%;
+	}
+
+
+
+    @media (max-width: 768px)
+    {
+        section{
+		padding-left: clamp(20px, 5vw, 50px);
+		padding-right: clamp(20px, 5vw, 50px);
+		}
+        .row-title
+        {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .row-buttons
+        {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .description 
+        {
+            width: 100%;
+        }
+    }
+</style>

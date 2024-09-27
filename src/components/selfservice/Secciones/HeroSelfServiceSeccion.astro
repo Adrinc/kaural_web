@@ -1,0 +1,61 @@
+---
+
+---
+<section id="heroselfservice">
+   
+    <p class="title">SELF <span class="text-primaryColor"> SERVICE </span> <span class="text-primaryTextColor"> CENTER</span></p>
+
+</section>
+ 
+<style>
+    section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+		box-sizing: border-box;
+		margin-top: 80px;
+        margin-bottom: 100px;
+		height: 80vh;
+        background-image:  url("/image/selfservicepage/auroraboreal.jpg");
+        background-size: cover;
+        background-position: center;
+ 
+    }
+    .green-ball-blured{
+    top:20%;
+	left: 35%;
+	position: absolute;
+    width: clamp(0px, 50vw, 530px);
+	height: clamp(0px, 50vw, 530px);
+	border-radius: 100%;
+    background: linear-gradient(0deg, #03FB75 0%, #03FB75 100%);
+	filter: blur(100px);
+    opacity: 0.8;
+	z-index: -1;
+	}
+	.title{
+	color: var(--secondary-color);
+	font-size: clamp(14px, 5vw, 120px);
+	font-weight: 700;
+	text-align: center;
+	justify-content: center;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+	}
+
+    @media (max-width: 768px) 
+    {
+	section{
+        height: 60vh;
+    }
+	.title{
+	color: var(--secondary-color);
+	font-size: clamp(14px, 30vw, 45px);
+	font-weight: 700;
+	text-align: center;
+	justify-content: center;
+	}
+	}
+    
+</style>

@@ -1,0 +1,184 @@
+---
+
+
+---
+<section id="home">
+
+
+	<div class="main-container">
+
+        <div class="columna-izquierda">
+			<span class="purple-ball-blured"></span>
+			<iframe class="acp-video" src="https://www.youtube.com/embed/0pkXReo9Kfk?si=m9sF7jb8c5Y0Q2Hl" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="columna-izquierda-texto-seccion"> 
+            <p class="description">
+                Affordable Connectivity Program recipients fully enrolled as of December 31, 2021 will automatically continue to receive their current monthly benefit until March 1, 2022. 
+                You can learn more about the program transition and steps you may need to take to stay enrolled after March 1st, by visiting <a href="https://www.fcc.gov/broadbandbenefit" class="text-secondaryColor font-bold hover:text-primaryColor hover:text-2xl transition-all">fcc.gov/broadbandbenefit.</a>
+            </p>
+            </div>
+            
+		</div>
+
+		<div class="columna-derecha" >
+
+			<div class="columna-derecha-texto-seccion">
+				<div><span class="title">What it is<span class="text-primaryColor"> ACP </span>and how it works</span></div>
+				<p class="subtitle">About the Affordable Connectivity Program</p>
+				<p class="description">
+					The Affordable Connectivity Program is an FCC benefit program that helps ensure that households can afford the broadband they need for work, school, healthcare and more.
+                    <br><br>
+                    The benefit provides a discount of up to $30 per month toward internet service for eligible households and up to $75 per month for households on qualifying Tribal lands. 
+                    <br><br>
+                    The Affordable Connectivity Program is limited to one monthly service discount and one device discount per household.</p>
+			</div>
+	
+
+		
+		</div>
+
+		
+	</main>
+</section>
+		  
+	<style>
+
+
+		section{
+			display: flex;
+			flex-direction: column;
+		
+			block-size: auto;
+			padding-left: clamp(20px, 50vw, 100px);
+			padding-right: clamp(20px, 50vw, 100px);
+			margin-top: 150px;
+			
+		}
+		.purple-ball-blured{
+	position: absolute;
+    top: -20%;
+	left: 10%;
+    width: clamp(200px, 50vw, 500px);
+	height: clamp(200px, 50vw, 500px);
+	border-radius: 100%;
+    rotate: 90deg;
+    background: linear-gradient(180deg, rgba(87, 70, 229, 0.50) 0%, rgba(135, 67, 229, 0.50) 52.6%);
+	filter: blur(100px);
+	z-index: -1;
+	}
+		.main-container{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+           
+	}
+
+    .columna-izquierda{
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: left;
+            
+            gap: 2rem;
+			width: clamp(280px, 50vw, 700px);
+          
+        
+		}
+		.columna-derecha{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 2rem;
+            width: clamp(280px, 50vw, 700px);
+       
+		}
+	
+		
+		.columna-izquierda-texto-seccion, 
+        .columna-derecha-texto-seccion{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 2rem;
+			box-sizing: border-box;
+			
+			
+		}
+		
+
+			.title, .best{
+			color: var(--primary-text-color);
+			font-size: clamp(30px, 5vw, 40px);
+			font-weight: 400;
+			display: block;
+			text-wrap: balance;
+			text-align: center;
+
+			}
+	
+			.subtitle{
+			color: var(--primary-text-color);
+			font-size: clamp(20px, 5vw, 30px);
+			font-weight: 400;
+			letter-spacing: 2px;
+			text-align: left;
+			word-spacing: 5px;
+			text-wrap: pretty;
+			font-weight: 300;
+			margin-top: 1rem;
+			display: block;
+			}
+		
+		  
+			.acp-video {
+			width: clamp(280px, 40vw, 560px); 
+			height: clamp(280px, 40vw, 315px);
+            border-radius: 15px;
+			align-self: center;
+           
+			}
+
+			.description {
+			  color: var(--primary-text-color);
+			  font-weight: 300;
+			  text-wrap: pretty;
+			  font-size: clamp(1rem, 1.3vw, 1.5rem);
+			  display: block;
+			}
+
+		
+	
+			@media (max-width: 900px) {
+				.main-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				align-content: center;
+				gap: 4rem;
+				}
+				section{
+					padding-left: clamp(20px, 5vw, 50px);
+				padding-right: clamp(20px, 5vw, 50px);
+				
+				}
+                .columna-izquierda{
+                    width: 100%;
+                    height: 70vh;
+                }
+                .columna-derecha{
+                    width: 100%;
+                }
+                .acp-video{
+                    width: 100%;
+                    height: 50vh;
+                }
+				.title, .best, .subtitle{
+				text-align: center;
+			
+				}
+			
+			}
+			
+	
+ </style>

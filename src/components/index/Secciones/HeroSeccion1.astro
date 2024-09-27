@@ -1,0 +1,44 @@
+---
+
+import BuyOrApplyFree from "../../global/BuyOrApplyFree.astro";
+import RiveComponent from "../../global/animations/riveComponent";
+
+---
+<section id="#home" >
+
+	<RiveComponent 
+	src="/rive/kaural.riv" 
+	artboard="home_seccion1t"
+	stateMachines="State Machine 1"
+	autoplay={true} 
+	transition:persist 
+	fit="fill"
+	client:only/>
+
+
+
+
+	
+</section>
+		  
+	<style>
+
+		section{
+		
+			position: relative;
+			display: flex;
+			flex-direction: column-reverse;
+			flex: 1;
+	
+			width: 100vw;
+			height: 100vh;
+	
+		}
+
+
+
+	
+	
+	
+	
+ </style>

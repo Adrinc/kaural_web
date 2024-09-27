@@ -1,0 +1,165 @@
+---
+
+
+---
+<section id="home">
+
+
+	<div class="main-container">
+		<div class="columna-izquierda" >
+
+			<div class="columna-izquierda-texto-seccion">
+				<div><span class="title">Affordable<span class="text-primaryColor"> Connectivity </span> Program</span></div>
+				<p class="subtitle">Helping you stay connected with home Internet.</p>
+				<p class="description max-md:text-center">	Visit the FCC Website by <span><a href="https://www.affordableconnectivity.gov/" class="text-secondaryColor font-bold text-2xl self-center hover:text-primaryColor hover:text-4xl transition-all">CLICKING HERE</a></span>
+				<p class="description">
+					The benefit provides a discount of up to $30 per month toward internet service for eligible households.
+					The Affordable Connectivity Program is limited to one monthly service discount and one device discount per household.</p>
+			</div>
+	
+
+		
+		</div>
+
+		<div class="columna-derecha">
+			<span class="green-ball-blured" id="ball1"></span>
+			<img src="/image/family1.png" alt="Affordable Connectivity Program">
+		</div>
+	</div>
+</section>
+		  
+	<style>
+
+
+		section{
+		
+			display: flex;
+			flex-direction: column;
+		
+			block-size: auto;
+			padding-left: clamp(20px, 50vw, 100px);
+			padding-right: clamp(20px, 50vw, 100px);
+			margin-top: 150px;
+	
+			
+		}
+		.green-ball-blured{
+		position: absolute;
+		top: -5%;
+		left: 10%;
+		width: clamp(400px, 50vw, 600px);
+		height: clamp(400px, 50vw, 600px);
+		border-radius: 100%;
+		
+		rotate: -45deg;
+	
+		filter: blur(100px);
+		z-index: -1;
+		background: linear-gradient(#5746E5 20%, #5107b9 40%, #04a54f 80%);
+	
+	}
+		.main-container{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		
+	}
+		.columna-izquierda{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: auto;
+			gap: 2rem;
+		
+		}
+		.columna-derecha{
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-self: center;
+			width: clamp(280px, 50vw, 500px);
+			height: clamp(280px, 50vw, 500px);
+		
+			
+		}
+		
+		.columna-izquierda-texto-seccion{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 2rem;
+			box-sizing: border-box;
+			width: clamp(280px, 50vw, 700px);
+			
+		}
+		
+
+			.title, .best{
+			color: var(--primary-text-color);
+			font-size: clamp(30px, 5vw, 60px);
+			font-weight: 400;
+			display: block;
+			text-wrap: balance;
+			text-align: center;
+
+			}
+	
+			.subtitle{
+			color: var(--primary-text-color);
+			font-size: clamp(20px, 5vw, 50px);
+			font-weight: 400;
+			letter-spacing: 2px;
+			text-align: left;
+			word-spacing: 5px;
+			text-wrap: pretty;
+			font-weight: 300;
+			margin-top: 1rem;
+			display: block;
+			}
+		
+		  
+			img {
+			width: clamp(280px, 80vw, 600px); 
+			height: clamp(280px, 80vw, 600px);
+			display: block;
+			}
+
+			.description {
+			  color: var(--primary-text-color);
+			  font-weight: 300;
+			  text-wrap: pretty;
+			  font-size: clamp(1rem, 1.3vw, 1.5rem);
+			  display: block;
+			}
+
+		
+	
+			@media (max-width: 768px) {
+				.main-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				align-content: center;
+				gap: 1rem;
+				}
+				section{
+					padding-left: clamp(20px, 5vw, 50px);
+				padding-right: clamp(20px, 5vw, 50px);
+				
+				}
+				.columna-izquierda-texto-seccion{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				gap: 2rem;
+				width: 100%;
+				}
+				.title, .best, .subtitle{
+				text-align: center;
+			
+				}
+			
+			}
+			
+	
+ </style>

@@ -1,0 +1,100 @@
+<!-- ---
+import TarjetaPaqueteEspecial from '../../TarjetaPaqueteEspecial.astro';
+import PriceAndPlansInfo from '../PriceAndPlansInfo.astro';
+
+let listas = [
+  { icono: 'image/checkwhite.svg', texto: '5G Wi-Fi Gateway device included' },
+  { icono: 'image/checkwhite.svg', texto: 'Netflix™ ON USApps' },
+  { icono: 'image/checkwhite.svg', texto: 'Apple TV+ ON US' },
+  { icono: 'image/checkwhite.svg', texto: '5G Speeds' },
+  { icono: 'image/checkwhite.svg', texto: 'Mexico and Canada no extra fees' },
+];
+---
+
+
+<div id="plan"><PriceAndPlansInfo /></div>
+<section>
+<div class="columna-izquierda">
+
+
+   <div class="title">
+     JUST <span class="text-primaryColor">ONE</span> PLAN?
+   </div>
+   <div class="description">
+     <p>Yes, we make it  <span class="text-secondaryColor font-bold">simple.</span> </p>
+   </div>
+ 
+   <p class="description">Discover perfection in simplicity. Our single subscription has it all, without the hassle</p>
+   <p class="description-inferior">Only the best for </p>
+ </div>
+
+<div class="columna-derecha">
+
+  <TarjetaPaqueteEspecial precio="30" modelo="Value" description="The best value for your money." lista={listas}/>
+</div>
+</section>
+
+
+<style>
+  section {
+  display: flex;
+  flex-direction: row;
+	justify-content: space-between;
+  align-items: center;
+  padding: clamp(0px, 10vw, 100px);
+  gap: 1rem;
+
+  }
+  
+  .columna-izquierda{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    width: 100%;
+    height: 60vh;
+  }
+  .columna-derecha{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: center;
+    width: 50%;
+  
+  }
+
+
+  .description 
+  {
+    color: var(--primary-text-color);
+		font-size: clamp(1.5rem, 3vw, 50px);
+    font-weight: 100;
+    text-align: left;
+
+  }
+  .description-inferior 
+  {
+    color: var(--primary-text-color);
+		font-size: clamp(1.5rem, 4vw, 30px);
+    font-weight: 100;
+    text-align: left;
+
+  }
+
+
+	.title{
+    
+      color: var(--primary-text-color);
+			font-size: clamp(1.5rem, 3vw, 80px);
+			font-weight: bold;
+			}
+
+
+  @media (max-width: 768px) {
+    section {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+</style> -->

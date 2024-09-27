@@ -1,0 +1,18 @@
+---
+/* ASTRO CLIPRRECT */
+interface AstroClipRRectProps {
+    key?: string;
+    borderRadius?: number;
+}
+
+let { 
+    key,
+    borderRadius = 0
+}: AstroClipRRectProps = Astro.props;
+---
+<div id={key} style={`
+    overflow: hidden;
+    border-radius: ${borderRadius}px;
+`}>
+    <slot />
+</div>

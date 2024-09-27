@@ -1,0 +1,49 @@
+---
+import BotonFlecha from "./BotonFlecha.astro";
+
+interface Props {
+    direction?:string;
+	buttonText1?: string;
+	buttonText2?: string;
+	buttonLink1?: string;
+	buttonLink2?: string;
+    buttonTextColor1?: string;
+    buttonTextColor2?: string;
+    fontweightL?: string;
+    fontweightR?: string;
+}
+const{
+    direction="row",
+    buttonText1="Buy Now",
+    buttonText2="Apply for free Wifi",
+    buttonLink1="#",
+    buttonLink2="#",
+    fontweightL="500", fontweightR="500",
+    buttonTextColor1="var(--primary-buttom-outline-text-color)",
+    buttonTextColor2="var(--primary-buttom-fill-text-color)"
+}= Astro.props;
+---
+
+<div class="botones inline" style={`--direction: ${direction};`}>
+    <BotonFlecha fontweight={fontweightL} textColor={buttonTextColor1}  texto= {buttonText1} iconColor="var(--primary-text-color)"  link={buttonLink1}/>
+    <p class="texto-or font-bold text-primaryTextColor "> OR </p>
+    <BotonFlecha fontweight={fontweightR} textColor={buttonTextColor2} backgroundColor="var(--secondary-color)" borderColor="var(--secondary-color)" iconColor="var(--secondary-color)" texto={buttonText2} link={buttonLink2}/>
+
+<style>
+    .botones{
+        display: inline-flex;
+        flex-direction: var(--direction);
+        justify-content: center;
+        align-items: center;
+        gap: clamp(10px, 20vw, 20px);
+       
+    }
+    .texto-or{
+        font-size: clamp(1rem, 2vw, 1.5rem);
+    }
+    @media (max-width: 768px){
+        .botones{
+            flex-direction: column;
+        }
+    }
+</style>

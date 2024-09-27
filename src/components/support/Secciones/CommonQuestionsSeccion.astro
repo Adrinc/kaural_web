@@ -1,0 +1,146 @@
+---
+import DropMenu from "../../react_components/DropMenu";
+
+const dataIzquierda= [
+    {
+    question: "What are the different ways I can pay my bill?",
+    answer: "You can pay your bill online, by phone, by mail, or in person. We accept Visa, MasterCard, Discover, and American Express. You can also pay with a check or money order."
+    },
+    {
+        question: "What should I do if my gateway is lost or stolen?",
+        answer: "If your gateway is lost or stolen, please contact us immediately. We will deactivate your gateway and send you a new one. You will be responsible for the cost of the new gateway."
+    }
+
+];
+const dataDerecha= [
+
+    {
+        question: "What should I do if my gateway is lost or stolen?",
+        answer: "If your gateway is lost or stolen, please contact us immediately. We will deactivate your gateway and send you a new one. You will be responsible for the cost of the new gateway."
+    },
+    {
+        question:"Can I use my all devices on U-wifi network?",
+        answer: "Yes, you can connect any device to the U-wifi network. However, we recommend that you use a gateway to connect your devices to the network. This will provide you with the best possible connection."
+    }
+
+];
+---
+
+
+<section id="questions">
+
+    <h1>Common questions about U-wifi Internet</h1>
+    <div class="questionContainer ">
+
+        <div class="columnaIzquierda">
+            {dataIzquierda.map((item) => ( 
+                    <div class="mb-8 gap-8">
+                    <DropMenu client:visible transition:persist question={item.question} answer={item.answer} />
+                    </div>
+                ))}
+        </div>
+
+        <div class="columnaDerecha">
+                {dataDerecha.map((item) => ( 
+
+                    <div class="mb-8 gap-8">
+                    <DropMenu client:visible transition:persist question={item.question} answer={item.answer} />
+                    </div>
+                ))}
+        </div>
+
+    </div>
+    <span class="green-ball-blured"></span>
+
+</section>
+
+
+<style>
+    .columnaIzquierda, .columnaDerecha{
+        width: 50%;
+
+    }
+    .green-ball-blured{
+    top: -20%;
+	left: 70%;
+	position: absolute;
+    width: clamp(0px, 50vw, 600px);
+	height: clamp(0px, 50vw, 600px);
+	border-radius: 100%;
+    background: linear-gradient(0deg, #022c16 0%, #02572a 100%);
+	filter: blur(100px);
+    opacity: 0.8;
+	z-index: -1;
+	}
+ 	section{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        block-size: auto;
+        padding-left: clamp(20px, 50vw, 100px);
+        padding-right: clamp(20px, 50vw, 100px);
+        gap: 60px;
+        margin-bottom: 150px;
+     
+    }
+    h1{
+        color: var(--primary-text-color);
+        font-size: clamp(2rem, 5vw, 60px);
+        font-weight: 500;
+        display: block;
+        text-wrap: balance;
+        text-align: left;
+    }
+    .questionContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 150px;
+    }
+ 
+    .carttile{
+	    color: var(--tertiary-text-color);
+	    font-size: clamp(20px, 5vw, 25px);
+	    font-weight: 500;
+	    display: block;
+	    text-wrap: balance;
+	    text-align: left;  
+	    }
+    .description, p {
+	  color: var(--primary-text-color);
+	  font-weight: 300;
+	  text-wrap: pretty;
+	  font-size: clamp(1rem, 1.3vw, 1.2rem);
+	  display: block;
+      max-width: 50vw;
+      margin-bottom: 0.5rem;
+    
+	}
+    @media (max-width: 900px)
+    {
+        section{
+		padding-left: clamp(20px, 5vw, 50px);
+		padding-right: clamp(20px, 5vw, 50px);
+		}
+        .questionContainer{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 50px;
+        }
+        .description, p {
+            max-width: 100%;
+        }
+        .columnaIzquierda, .columnaDerecha{
+            width: 100%;
+            padding: 0;
+        }
+        h1{
+            text-align: center;
+            color: var(--cuaternary-color);
+            font-weight: 600;
+        }
+
+    }
+</style>

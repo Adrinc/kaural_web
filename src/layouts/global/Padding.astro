@@ -1,0 +1,31 @@
+---
+/* FLUTTER LIKE PADDING */
+interface PaddingProps {
+    key?: string;
+    all?: number;
+    top?: number;
+    right?: number;
+    bottom?: number;
+    left?: number;
+}
+
+let { 
+    key,
+    all = 0,
+    top = 0,
+    right = 0,
+    bottom = 0,
+    left = 0
+}: PaddingProps = Astro.props;
+
+top = all > 0 ? all : top;
+right = all > 0 ? all : right;
+bottom = all > 0 ? all : bottom;
+left = all > 0 ? all : left;
+---
+
+<div id={key} style={`
+    padding: ${top}px ${right}px ${bottom}px ${left}px;
+`}>
+    <slot />
+</div>

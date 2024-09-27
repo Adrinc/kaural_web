@@ -1,0 +1,173 @@
+---
+
+import LayoutSecciones from '../../layouts/index/LayoutSecciones.astro.jsx';
+import Carrusel from '../Scene3D/CarruselScene/carruselMain.jsx';
+
+
+---
+
+<LayoutSecciones marginTop='15vh'>
+    <div slot="col-izquierda">
+
+        <div class="text-container p-2">
+            <span class="title">
+                It´s 
+                <span class="all"> all </span> 
+                about 
+                <img class="image" loading="lazy" srcset="faviui.png"/>
+            </span>
+        </div>
+        <p class="description p-2">
+            We know that each client is unique, which is why we offer a variety of customizable plans. 
+            From generous data options to family-friendly services, we have the flexibility to adapt to your specific needs. 
+            With us, there is no one-size-fits-all approach; It's all about what works best for you.
+        </p>
+        
+            
+    </div>
+
+
+
+    <div slot="col-derecha">
+
+        <div class="contenedor-imagenes">
+        	<img  loading="lazy" src="image/ublanca.png" class="imagen"/>
+				<div class="overtopcarrusel">
+					<Carrusel client:visible/>
+				</div>
+		</div>
+      
+    </div>
+
+</LayoutSecciones>
+
+
+
+<style>
+	.title, .best, .subtitle{
+			color:#ffff;
+			font-size: clamp(40px, 5vw, 100px);
+			font-weight: 400;
+			letter-spacing: 2px;
+			text-align: left;
+			word-spacing: 5px;
+			text-wrap: balance;
+
+			}
+			.all{
+				color: #7C47DD;
+				font-size: 100px;
+				text-wrap: balance;
+			}
+			.subtitle{
+				font-size: 66px;
+				font-weight: 300;
+				line-height: 160%;
+				margin-top: 50px;
+			}
+			.image {
+			display: inline-block;
+			aspect-ratio: 1.1;
+		
+			width: 85px;
+			height: 85px;
+			margin-bottom: 35px;
+			}
+		
+		
+			.description {
+			  color: #fff;
+			  font-weight: 300;
+			  text-wrap: pretty;
+			
+			  font-size: clamp(1rem, 1.3vw, 1.5rem);
+			}
+		.overtopcarrusel{
+			position: relative;
+			
+			bottom: 350px;
+			left: 100px;
+			width: 620px;
+			height: 300px;
+			
+			z-index: 3;
+		}
+
+		.contenedor-imagenes{
+			
+			width: clamp(280px, 50vw, 500px);
+			height: clamp(280px, 50vw, 500px);
+		
+		}
+		@media screen and (max-width: 900px) {
+			.main-container {
+			 gap:10px;
+			
+			}
+			.contenedor-imagenes{
+			
+			width: clamp(280px, 50vw, 450px);
+			height: clamp(280px, 50vw, 450px);
+		
+			}
+			.overtopcarrusel{
+		
+			width: 580px;
+			height: 280px;
+	
+
+			}
+		
+		
+	
+		
+		}
+		@media screen and (max-width: 768px) {
+			.main-container {
+			 gap:10px;
+			
+			}
+			.contenedor-imagenes
+			{
+			
+			width: clamp(280px, 50vw, 400px);
+			height: clamp(280px, 50vw, 400px);
+		
+			}
+			.overtopcarrusel{
+
+			width: 500px;
+			height: 250px;
+			bottom: 300px;
+			left: 50px;
+			}
+		
+		
+		}
+		@media screen and (max-width: 640px) {
+			.main-container {
+			 gap:10px;
+			
+			}
+			.contenedor-imagenes
+			{
+			
+			width: clamp(230px, 50vw, 280px);
+			height: clamp(230px, 50vw, 280px);
+			}
+			.overtopcarrusel{
+
+			width: 300px;
+			height: 150px;
+			bottom: 200px;
+			}
+	
+		
+		}
+		
+		
+
+			
+	
+	
+</style>

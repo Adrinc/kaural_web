@@ -1,0 +1,243 @@
+---
+import BotonFlecha from "../../global/BotonFlecha.astro";
+
+---
+
+
+<section id="howit">
+
+	<span class="green-ball-blured"></span>
+    <div class="contenedor">
+        <div class="title">
+           <span class="text-tertiaryTextColor">How </span>it works?
+        </div>
+    </div>
+    <div class="contenedor">
+        <div class="title">
+            Simple. Unbox and plug it in!
+        </div>
+    </div>
+
+    <div class="row_dos_columnas">
+
+        <div class="columnaizquierda">
+            <div class="lista">
+                <svg alt-arial="mark icon" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 131" fill="none">
+                    <path d="M49.68 12.1316C39.432 12.1316 29.6038 16.4613 22.3574 24.1681C15.111 31.8749 11.04 42.3276 11.04 53.2267C11.04 70.0288 20.8766 86.2379 31.6738 98.7954C37.1975 105.189 43.2212 111.073 49.68 116.384C56.1387 111.077 62.1624 105.197 67.6862 98.8071C78.4834 86.2379 88.32 70.0347 88.32 53.2267C88.32 42.3276 84.249 31.8749 77.0026 24.1681C69.7562 16.4613 59.928 12.1316 49.68 12.1316ZM49.68 130.803L46.5502 128.513L46.5336 128.501L46.5005 128.472L46.3901 128.39L45.9761 128.079C43.6904 126.312 41.4556 124.471 39.2748 122.56C33.6851 117.677 28.4228 112.384 23.5262 106.721C12.2434 93.5939 0 74.5786 0 53.2267C1.96337e-07 39.2136 5.23413 25.7744 14.5509 15.8656C23.8677 5.95683 36.504 0.390137 49.68 0.390137C62.856 0.390137 75.4923 5.95683 84.8091 15.8656C94.1259 25.7744 99.36 39.2136 99.36 53.2267C99.36 74.5786 87.1166 93.5998 75.8338 106.721C69.4409 114.116 62.4272 120.876 54.8798 126.916C54.2509 127.416 53.6161 127.907 52.9754 128.39L52.8595 128.472L52.8264 128.501L52.8154 128.507L49.68 130.797V130.803ZM49.68 41.4853C46.752 41.4853 43.9439 42.7223 41.8735 44.9243C39.8031 47.1262 38.64 50.1127 38.64 53.2267C38.64 56.3408 39.8031 59.3273 41.8735 61.5292C43.9439 63.7312 46.752 64.9682 49.68 64.9682C52.608 64.9682 55.4161 63.7312 57.4865 61.5292C59.5569 59.3273 60.72 56.3408 60.72 53.2267C60.72 50.1127 59.5569 47.1262 57.4865 44.9243C55.4161 42.7223 52.608 41.4853 49.68 41.4853ZM27.6 53.2267C27.6 46.9987 29.9263 41.0257 34.0671 36.6218C38.2079 32.2179 43.824 29.7438 49.68 29.7438C55.536 29.7438 61.1521 32.2179 65.2929 36.6218C69.4337 41.0257 71.76 46.9987 71.76 53.2267C71.76 59.4548 69.4337 65.4278 65.2929 69.8317C61.1521 74.2356 55.536 76.7097 49.68 76.7097C43.824 76.7097 38.2079 74.2356 34.0671 69.8317C29.9263 65.4278 27.6 59.4548 27.6 53.2267Z" fill="white"/>
+                    </svg>
+                    <span class="bigchar">1</span>
+                <p> Confirm internet coverage at your address</p>
+            </div>
+            <div class="lista">
+                <img alt="truck icon" class="icono" src="/icons/receiveicon.svg" alt="ui-icon">
+                    <span class="bigchar">2</span>  
+                <p>Purchase and U arrives at your home in 2 days</p>
+            </div>
+            <div class="lista">
+                <img alt="app icon" class="icono" src="/image/movilconlogo.png" alt="ui-icon">
+                    <span class="bigchar">3</span> 
+                <p>Unbox and plug the U in – instant U-wifi!</p>
+            </div>
+
+          
+        </div>
+
+
+        <div class="columnaderecha" >
+            <span class="multi-ball-blured"></span>
+            <img alt="phone image" class="iconoGrande" src="/image/movilconlogo.png" alt="ui-icon">
+          
+                <BotonFlecha texto="Download App" link="/signup"  />
+         
+        </div>
+    </div>
+
+
+</section>
+
+
+
+<style>
+
+.green-ball-blured{
+    top: -20%;
+	left: -30%;
+	position: absolute;
+    width: clamp(200px, 50vw, 620px);
+	height: clamp(200px, 50vw, 600px);
+	border-radius: 100%;
+    background: #0c5406;
+	filter: blur(150px);
+	z-index: -1;
+	}
+.multi-ball-blured{
+	position: absolute;
+    top: 0;
+	left: 0;
+    width: clamp(200px, 50vw, 400px);
+	height: clamp(200px, 50vw, 400px);
+	border-radius: 100%;
+    rotate: -90deg;
+    background: linear-gradient(#5746E5 20%, #8743E5 20%, #20b340 60%);
+	filter: blur(100px);
+	z-index: -1;
+	}
+
+    section{
+        position:relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: clamp(0px, 10vw, 100px);
+        width: 100%;
+        margin-top: 80px;
+    }
+    .lista{
+        display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    text-overflow: ellipsis;
+    align-content: center;
+    gap: 40px;
+    }
+    .bigchar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: clamp(2rem, 7vw, 110px);
+        font-weight: 700;
+        color: var(--primary-text-color);
+
+    }
+    p{
+        color: var(--primary-text-color);
+        font-size: clamp(1rem, 3vw, 40px);
+       
+        font-family: var(--font-family-secondary);
+        text-wrap: pretty;
+       
+    }
+   
+    svg, .icono{
+        width: clamp(35px, 5vw, 150px);
+        height: clamp(35px, 10vw, 180px);
+       
+    }
+    .iconoGrande{
+        width: clamp(100px, 20vw, 250px);
+        height: clamp(100px, 50vw 400px);
+    }
+  
+
+    .row_dos_columnas{
+        display: flex;
+        flex-direction: row;
+
+        align-items: flex-start;
+        align-content: flex-start;
+        width: 100%;
+        height: 100%;
+       
+    
+        margin-top: 50px;
+    }
+    .columnaizquierda{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        align-content: flex-start;
+        width: 70%;
+        height: 60vh;
+
+    }
+    .columnaderecha{
+        position:relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-content: center;
+        align-items: center;
+        align-content: center;
+        width: 30%;
+        height: 60vh;
+        gap:20px;
+  
+    
+    }
+
+	.contenedor{
+		display: flex;
+		flex-direction: row;
+		justify-content: left;
+		align-items: left;
+		width: 100%;
+		text-wrap: pretty;
+	}
+
+
+	.title{
+	
+        color: var(--primary-text-color);
+			font-size: clamp(1.5rem, 3vw, 60px);
+			font-weight: 600;
+            text-wrap: balance;
+			}
+
+    @media (max-width: 768px) {
+        section{
+            gap:1rem;
+        }
+
+
+    
+	.contenedor{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		
+	}
+    
+    .row_dos_columnas {
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    gap: 1rem;
+    }
+    .columnaizquierda{
+        width: 100%;
+        height: 100%;
+        gap: 1rem;
+
+    }
+    .columnaderecha{
+        width: 100%;
+        height: 100%;
+    }
+    .lista{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        gap: 1rem;
+        width: 100%;
+        height: 100%;
+    }
+    .title{
+	    text-align: center;
+    }
+  }
+  @media  screen and (height< 450px) {
+				section{
+		
+				
+					margin-bottom: clamp(50px, 50vh, 100px);
+				}
+		
+			}
+</style>
