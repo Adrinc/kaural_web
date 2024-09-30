@@ -7,6 +7,7 @@ import TopMenuSuffle from '../components/header/TopMenuSuffle.astro';
 
 import FootUWIFI from '../components/global/FootUWIFI.astro';
 import { ViewTransitions } from 'astro:transitions';
+import RedesSocialesNav from '../components/global/RedesSocialesNav.astro';
 
 interface Props {
 	showNavBar?: boolean;
@@ -22,6 +23,7 @@ const {title, showNavBar=true, showFooter=true, dataLayout, seoData } = Astro.pr
 <!doctype html>
 <html lang="en">
 	<head>
+	
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
@@ -42,6 +44,7 @@ const {title, showNavBar=true, showFooter=true, dataLayout, seoData } = Astro.pr
 
 
 	<main>	
+		<RedesSocialesNav />
 		<slot />
 	</main>
 	<video 

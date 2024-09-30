@@ -1,0 +1,87 @@
+---
+---
+
+<div class="sidebar">
+    <a href="https://www.instagram.com/el_kaural/" target="_blank" class="social-icon" data-label="Instagram">
+      <img src="/icons/redes/instagram.svg" alt="Instagram" />
+    </a>
+    <a href="https://www.facebook.com/ElKaural/" target="_blank" class="social-icon" data-label="Facebook">
+      <img src="/icons/redes/facebook.svg" alt="Facebook" />
+    </a>
+
+    <a href="https://open.spotify.com/artist/0OYvYgu1wZoNPXiT56a9Bb?si=_DTnKGXaSbqh7HCwjv5w2Q" target="_blank" class="social-icon" data-label="Spotify">
+      <img src="/icons/redes/spotify.svg" alt="Spotify" />
+    </a>
+    <a href="https://tiktok.com/@elkaural" target="_blank" class="social-icon" data-label="TikTok">
+      <img src="/icons/redes/tiktok.svg" alt="TikTok" />
+    </a>
+    <a href="https://www.amazon.com/music/player/artists/B0C3HCRTTL/el-kaural" target="_blank" class="social-icon" data-label="Amazon Music">
+      <img src="/icons/redes/amazon.svg" alt="Amazon Music" />
+    </a>
+  </div>
+  
+  <style>
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background-color: black;
+      width: 5%;
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 100;
+    }
+  
+    .social-icon {
+      position: relative;
+      display: block;
+      width: 75px; /* Ajusta según lo necesario */
+      height: 75px;
+      transition: background-color 0.3s ease;
+      padding: 10px;
+      border-radius: 50%;
+    }
+  
+    .social-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  
+    .social-icon:hover {
+      background-color: #d35400; /* Naranja oscuro */
+    }
+
+    .social-icon::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: -30px; /* Ajusta según sea necesario */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: black;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .social-icon:hover::after {
+      opacity: 1;
+    }
+  
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 8%; /* Ajuste del ancho para pantallas pequeñas */
+      }
+      .social-icon {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  </style>
