@@ -1,0 +1,271 @@
+---
+import Boletos from "../Boletos.astro";
+
+
+//data de testeo para futuramente usar graphql (ELIMINAR CUANDO SE USE GRAPHQL)
+const data = [
+    {
+        imgSrc: '/image/ciudades/tijuana.jpg',
+        imgAlt: "Tijuana ciudad",
+        title: 'Tijuana, MX', 
+        description: 'EL KAURAL llega con su energía desbordante. La banda promete una noche y musica inolvidable. ¡No te lo pierdas!',
+        direccion: 'José Gorostiza, Zona Urbana Rio, Tijuana, MX',
+        day: '12',
+        month: 'Oct',
+        year: '2024'
+    },
+    {
+        imgSrc: '/image/ciudades/la_plata_argentina.jpg',
+        imgAlt: "La plata argentina",
+        title: 'La Plata, ARG',
+        description: 'En su primera visita a La Plata, EL KAURAL llega con su sonido único que fusiona rock clásico y moderno. El Estadio Atenas será el epicentro de un espectáculo lleno de potencia y pasión.',
+        direccion: 'Calle 32 y 23, Estadio Atenas, La Plata, Argentina',
+        day: '3',
+        month: 'Nov',
+        year: '2024'
+    },
+    {
+        imgSrc: '/image/ciudades/buenos_aires_argentina2.jpg',
+        imgAlt: "Buenos aires argentina",
+        title: 'Buenos Aires, ARG', 
+        description: 'Buenos Aires se prepara para recibir a EL KAURAL en el icónico Estadio Monumental. Prepárate para vivir un show explosivo que quedará grabado en la memoria de todos los fanáticos del rock.',
+        direccion: 'Avenida Libertador 7395, Estadio Monumental, Buenos Aires, Argentina',
+        day: '7',
+        month: 'Nov',
+        year: '2024'
+    },
+    {
+        imgSrc: '/image/ciudades/rosario_argentina.jpg',
+        imgAlt: "Rosario argentina",
+        title: 'Rosario, ARG',
+        description: 'EL KAURAL aterriza en Rosario para una noche cargada de adrenalina en el Metropolitano. Los seguidores de la banda disfrutarán de un repertorio inolvidable y de una puesta en escena imponente.',
+        direccion: 'Bv. Oroño 1400, Metropolitano Rosario, Rosario, Argentina',
+        day: '8',
+        month: 'Nov',
+        year: '2024'
+    },
+    {
+        imgSrc: '/image/ciudades/buenos_aires.jpg',
+        imgAlt: "Buenos aires argentina",
+        title: 'Buenos Aires, ARG', 
+        description: 'Una segunda fecha en Buenos Aires para los que no pudieron asistir a la primera. EL KAURAL regresa con más fuerza que nunca para cerrar con broche de oro en el Hipódromo de Palermo.',
+        direccion: 'Av. Figueroa Alcorta 5575, Hipódromo de Palermo, Buenos Aires, Argentina',
+        day: '9',
+        month: 'Nov',
+        year: '2024'
+    },
+    {
+        imgSrc: '/image/ciudades/viña_del_mar_chile.jpg',
+        imgAlt: "Viña del mar chile",
+        title: 'Viña del Mar, CL',
+        description: 'Viña del Mar vibrará al ritmo de EL KAURAL. El Casino de Viña del Mar será testigo de una presentación llena de energía y emociones que los fanáticos del rock no pueden perderse.',
+        direccion: 'Av. San Martín 199, Casino de Viña del Mar, Viña del Mar, Chile',
+        day: '14',
+        month: 'Nov',
+        year: '2024'
+    },
+    {
+        imgSrc: '/image/ciudades/santiago_chile.jpeg',
+        imgAlt: "Santiago chile",
+        title: 'Santiago, CL',
+        description: 'EL KAURAL se toma Santiago por asalto con un concierto en el Movistar Arena. La noche promete ser una celebración del rock, con un espectáculo que hará temblar la capital chilena.',
+        direccion: 'Av. Grecia 2001, Movistar Arena, Santiago, Chile',
+        day: '15',
+        month: 'Nov',
+        year: '2024'
+    },
+    {
+        imgSrc: '/image/ciudades/santiago_chile2.jpg',
+        imgAlt: "Santiago chile",
+        title: 'Santiago, CL',
+        description: 'Para quienes no pudieron asistir a la primera fecha, EL KAURAL repite en el Teatro Caupolicán. Una nueva oportunidad para vivir la magia y la fuerza de su música en vivo.',
+        direccion: 'Av. Vicuña Mackenna 4860, Teatro Caupolicán, Santiago, Chile',
+        day: '16',
+        month: 'Nov',
+        year: '2024'
+    },
+    {
+        imgSrc: '/image/ciudades/sandiego.jpg',
+        imgAlt: "San diego, ciudad",
+        title: 'San Diego, EUA', 
+        description: 'San Diego será el escenario perfecto para que EL KAURAL conquiste a su público estadounidense. El San Diego Convention Center será testigo de una noche electrizante.',
+        direccion: '111 W Harbor Dr, San Diego Convention Center, San Diego, EUA',
+        day: '23',
+        month: 'Nov',
+        year: '2024'
+    },
+    {
+        imgSrc: '/image/ciudades/mexicali.jpg',
+        imgAlt: "Mexicali ciudad",
+        title: 'Mexicali, MX',
+        description: 'EL KAURAL cierra el mes en Mexicali con un show que promete romper todos los esquemas. Plaza Calafia será el lugar donde el rock y la emoción se fusionarán en una noche épica.',
+        direccion: 'Av. de los Presidentes 187, Plaza Calafia, Mexicali, MX',
+        day: '30',
+        month: 'Nov',
+        year: '2024'
+    },
+    {
+        imgSrc: '/image/ciudades/ensenada.jpg',
+        imgAlt: "Ensenada ciudad",
+        title: 'Ensenada, MX', 
+        description: 'Ensenada recibe por primera vez a EL KAURAL en el Centro Cultural Riviera. Prepárate para una noche inolvidable llena de energía y puro rock.',
+        direccion: 'Blvd. Costero 1201, Centro Cultural Riviera, Ensenada, MX',
+        day: '7',
+        month: 'Dic',
+        year: '2024'
+    },
+    {
+        imgSrc: '/image/ciudades/los_angeles.jpg',
+        imgAlt: "Los angeles ciudad",
+        title: 'Los Angeles, EUA',
+        description: 'Los Ángeles se enciende con la llegada de EL KAURAL al Microsoft Theater. Una presentación que promete ser una de las más memorables de su gira.',
+        direccion: '800 W Olympic Blvd, Microsoft Theater, Los Angeles, EUA',
+        day: '14',
+        month: 'Dic',
+        year: '2024'
+    }
+];
+
+---
+
+<section>
+    <main>
+        <div class="columna-izquierda">
+            {
+                data.map((boleto) => (
+                    <Boletos
+                        title={boleto.title}
+                        description={boleto.description}
+                        imgSrc={boleto.imgSrc}
+                        imgAlt={boleto.imgAlt}
+                        direccion={boleto.direccion}
+                        day={boleto.day}
+                        month={boleto.month}
+                        year={boleto.year}
+                    />
+                ))
+            }
+        </div>
+     
+        <div class="columna-derecha">
+            <form>
+                <p class="title">EL KAURAL</p>
+
+                <div class="input-container">
+                    <span class="icon">👤</span>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+                </div>
+
+                <div class="input-container">
+                    <span class="icon">✉️</span>
+                    <input type="email" id="correo" name="correo" placeholder="Tu correo">
+                </div>
+
+                <input type="submit" value="Submit" class="submit-btn">
+            </form>
+        </div>
+    </main>
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: auto;
+        background-color: rgb(255, 255, 255);
+        border-top: 1px solid black;
+    }
+    main {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+    }
+    .columna-izquierda {
+        display: flex;
+        flex-direction: column;
+        flex: 0 auto;
+        align-items: center;
+        flex-grow: 1;
+        flex-basis: 70%;
+        border-right: 1px solid black;
+    }
+    .columna-derecha {
+        position: sticky;
+        top: 25vh;
+        flex: 0 auto;
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 600px;
+        width: 30%;
+
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 50px;
+    }
+    .title {
+        font-size: clamp(24px, 7vw, 90px);
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+    }
+
+    /* Estilo para los inputs */
+    .input-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px; /* Separación entre inputs */
+        border: 2px solid black;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    .icon {
+        margin-right: 10px;
+        font-size: 1.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        flex-grow: 1;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        padding: 5px;
+    }
+
+    /* Estilo para el botón */
+    .submit-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: black;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+        background-color: rgb(50, 50, 50);
+    }
+
+    .submit-btn:active {
+        background-color: rgb(20, 20, 20);
+    }
+
+    .submit-btn:focus {
+        outline: none;
+    }
+</style>
