@@ -241,6 +241,9 @@ const data = [
         outline: none;
         font-size: 1rem;
         padding: 5px;
+        background-color: tomato;
+        width: 100%;
+        box-sizing: border-box; 
     }
 
     /* Estilo para el botón */
@@ -267,5 +270,17 @@ const data = [
 
     .submit-btn:focus {
         outline: none;
+    }
+    @media (max-width: 768px) {
+        main {
+            flex-direction: column-reverse;
+        }
+        .columna-izquierda {
+            border-right: none;
+        }
+        .columna-derecha {
+            position: static;
+            width: 100%;
+        }
     }
 </style>

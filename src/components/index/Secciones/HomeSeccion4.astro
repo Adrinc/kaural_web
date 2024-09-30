@@ -1,43 +1,145 @@
-
-
-
-<section class="section">
+<section class="section4">
     
- 
-    <div class="flex h-[75vh] w-full bg-black group">
+    <div class="group">
      
-        <div class="w-[60%] group-hover:w-[55%] transition-all duration-300 relative ">
-
-            <div class="absolute inset-0 bg-cover bg-no-repeat bg-center filter blur-lg p-16" style="background-image: url('/image/kauralevento.jpg');"></div>
-            
-     
-            <img src="/image/kauralevento.jpg" alt="Imagen" class="relative h-full w-full object-contain opacity-75 group-hover:opacity-100 transition-opacity duration-300">
+        <div class="relative">
+            <div class="background-blur"></div>
+            <img src="/image/kauralevento.jpg" alt="Imagen" class="image-hover">
         </div>
         
-    
-        <div class="w-[40%] group-hover:w-[45%] transition-all duration-300 bg-white flex flex-col justify-evenly items-center  p-20">
-    
-            <div class="text-8xl font-bold text-center text-black mb-4">
+        <div class="text-container">
+            <div class="title">
                 EL RITUAL TOUR 2024
             </div>
-            
-         
-            <div class="text-6xl text-center font-bold  text-black mb-2">EL KAURAL</div>
-
-            <div class="flex text-center items-center">
-                <div class="text-3xl text-black mr-2">Proximamente: </div>
-                <div class="text-2xl font-semibold text-black  self-center">TIJUANA, MX SABADO 12 OCT</div>
+            <div class="subtitle">
+                EL KAURAL
             </div>
-            
+            <div class="location">
+                <div class="location-text">Proximamente: </div>
+                <div class="location-detail">TIJUANA, MX SABADO 12 OCT</div>
+            </div>
         </div>
     </div>
-    
-    
-  
-  </section>
-  
-  <style>
+</section>
 
-    
-  </style>
+<style>
+  .group {
+    display: flex;
+    flex-direction: row;
+    height: 75vh;
+    width: 100%;
+    background-color: black;
+  }
   
+  .relative {
+    width: 60%;
+    transition: all 0.3s ease;
+  }
+  
+  .group:hover .relative {
+    width: 55%;
+  }
+  
+  .background-blur {
+    position: absolute;
+    inset: 0;
+    background-image: url('/image/kauralevento.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(16px);
+    padding: 16px;
+  }
+  
+  .image-hover {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+  }
+  
+  .group:hover .image-hover {
+    opacity: 1;
+  }
+  
+  .text-container {
+    width: 40%;
+    transition: all 0.3s ease;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .group:hover .text-container {
+    width: 45%;
+  }
+  
+  .title {
+    font-size: clamp(24px, 6vw, 8rem);
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: clamp(16px, 4vw, 6rem);
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    margin-bottom: 0.5rem;
+  }
+  
+  .location {
+    display: flex;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .location-text {
+    font-size: clamp(14px, 3vw, 2rem);
+    color: black;
+    margin-right: 0.5rem;
+  }
+  
+  .location-detail {
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+    align-self: center;
+  }
+
+  @media (max-width: 768px) {
+    .group {
+      display: flex;
+      flex-direction: column-reverse;
+      height: auto;
+      width: 100%;
+      background-color: black;
+      transition: none;
+      pointer-events: none;
+    }
+    .text-container {
+      width: 100%;
+      background-color: white;
+      align-items: center;
+      padding: 20px;
+      transition: none;
+    }
+    .relative {
+      width: 100%;
+      transition: none;
+    }
+    .group .text-container .relative {
+      width: 100%;
+      transition: none;
+    }
+
+
+  }
+</style>
