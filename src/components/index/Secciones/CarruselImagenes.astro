@@ -1,0 +1,128 @@
+---
+
+interface Props {
+	texto?:string;
+	cantidad?:number;
+	imagen?:string;
+}
+
+const {texto="", cantidad=10,  imagen="/image/Elkauraltxtblanco.png" } = Astro.props;
+const items = Array.from({ length: cantidad }).map(() => ({ texto, imagen }));
+---
+
+<div class="content-wrapper">
+	<div class="carrusel">
+	  {items.concat(items).map((item) => (
+		<div class="item" >
+	
+		  <img src="/image/kaural/integrantes/nestor.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/bongos.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/baterista.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/guitarrista.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/guitarrista2.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/teclado.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/bajista.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/nestor.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/bongos.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/baterista.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/guitarrista.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/guitarrista2.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/teclado.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/bajista.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/nestor.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/bongos.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/baterista.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/guitarrista.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/guitarrista2.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/teclado.png" alt="kaural" />
+		  <img src="/image/kaural/integrantes/bajista.png" alt="kaural" />
+	
+		  
+		{/*   <button class="check-coverage-btn">{item.texto}</button> */}
+		</div>
+	  ))}
+	</div>
+  </div>
+  
+
+
+<style>
+	.content-wrapper {
+	
+	  overflow: hidden; 
+	  background-color: rgb(0, 0, 0);
+	  z-index: 10;
+    height: 50vh;
+    
+	}
+	
+	.carrusel{
+	display: flex;
+	flex-direction: row;
+	width: 1000px;
+	height: 100%;
+	align-items: flex-center;
+	align-content: flex-start;
+
+	white-space: nowrap;
+  	position: relative;
+
+	animation: carruselgrupo 50s linear infinite;
+	background-color: #000000;
+	}
+	.item {
+    flex: 0 0 auto;
+    width: calc(100% / {cantidad}); 
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #000000;
+  }
+	img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	
+	}
+	
+
+	@keyframes carruselgrupo {
+    0% {
+            transform: translateX(-600%);
+        }
+        100% {
+            transform: translateX(0%);
+        }
+  }
+  
+	.check-coverage-btn {
+	  color: var(--primary-text-color);
+	  text-transform: uppercase;
+	  align-self: stretch;
+	  flex-grow: 1;
+	  flex-basis: auto;
+	  font: 300 24px Inter, sans-serif;
+	  background: none;
+	  border: none;
+	  cursor: pointer;
+	}
+  
+	@media  screen and (height< 400px) {
+		.content-wrapper {
+	  padding-right: 153px;
+	  border-top: 1px solid var(--tertiary-color);
+	  border-bottom: 1px solid var(--tertiary-color);
+	  padding: 20px;
+	  margin-top: clamp(40px, 50vh, 200px);
+	  margin-botom: clamp(40px, 50vh, 200px);
+	}
+	
+	}
+	@media (max-width: 900px) 
+	{
+		
+	}
+  
+	
+  </style>

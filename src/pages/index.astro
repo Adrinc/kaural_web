@@ -3,25 +3,24 @@ import Layout from '../layouts/Layout.astro';
 import CarruselTextoHorizontal from '../components/global/CarruselTextoHorizontal.astro';
 import HeroSeccion1 from '../components/index/Secciones/HeroSeccion1.astro';
 import HeroSeccion2 from '../components/index/Secciones/HeroSeccion2.astro';
-import ACPSeccion from '../components/index/Secciones/ACPSeccion.astro';
-import JustOnePlanSeccion from '../components/index/Secciones/JustOnePlanSeccion.astro';
-import DividerPlus from '../components/DividerPlus.astro';
-import TabletSeccion from '../components/index/Secciones/TabletSeccion.astro';
-import BentogridSeccion2 from '../components/index/Secciones/BentogridSeccion2.astro';
-import Robot from '../components/global/Robot.astro';
+
+
 import HeroSeccion3 from '../components/index/Secciones/HeroSeccion3.astro';
 import HomeSeccion4 from '../components/index/Secciones/HomeSeccion4.astro';
 import BoletosSeccion from '../components/index/Secciones/BoletosSeccion.astro';
+import CarruselImagenes from '../components/index/Secciones/CarruselImagenes.astro';
 
 ---
 
-<Layout title="Home" showFooter={false}>
+<Layout title="Home" showFooter={true}>
 	
 	<HeroSeccion1/>
 	<HeroSeccion2 />
 	<HeroSeccion3 />
-	  <CarruselTextoHorizontal />
 	<HomeSeccion4 />
+	<CarruselTextoHorizontal />
+	<CarruselImagenes />
+	<CarruselTextoHorizontal />
 	<BoletosSeccion />
 
 
