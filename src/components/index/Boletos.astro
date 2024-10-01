@@ -15,26 +15,31 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 ---
 
 <section class="custom-component">
-	<!-- Primer elemento: Imagen -->
-	<div class="image-container">
-	  <img src=`${imgSrc}` alt=`${imgAlt}` class="image">
+	<main class="maincontain">
+		<div class="background-image"></div>
+
+		<!-- Primer elemento: Imagen -->
+		<div class="image-container">
+			<img src=`${imgSrc}` alt=`${imgAlt}` class="image">
+		</div>
+		
+		<!-- Segundo elemento: Columna de texto -->
+		<div class="text-container">
+			<h1 class="title">{title}</h1>
+			<p class="description">{description}</p>
+			<p class="direccion">{direccion}</p>
 	</div>
-  
-	<!-- Segundo elemento: Columna de texto -->
-	<div class="text-container">
-	  <h1 class="title">{title}</h1>
-	  <p class="description">{description}</p>
-	  <p class="direccion">{direccion}</p>
-	</div>
-  
+	
 	<!-- Tercer elemento: month y Día -->
 	<div class="date-container">
-	  <div class="date">
-		<p class="month">{month}</p>
-		<p class="day">{day}</p>
-		<p class="day">{year}</p>
-	  </div>
+		<div class="date">
+			<div class="background-image2"></div>
+			<p class="month">{month}</p>
+			<p class="day">{day}</p>
+			<p class="day">{year}</p>
+		</div>
 	</div>
+</main>
   </section>
   
   <style>
@@ -47,16 +52,51 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 	  border-bottom: 1px solid black;
 	  width: 100%;
 	 
-	  transition: all 0.6s ease; /* Cambio más lento */
-	  color: black; /* Texto por defecto negro */
+	  transition: all 0.6s ease; 
+	  color: black; 
+	}
+	.maincontain {
+		position: relative;
+		display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+		width: 100%;
+		height: auto;
 	}
   
-	/* Imagen */
+	.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/image/effect/sandeffect2.jpg');
+    background-size: contain;
+    background-position: center;
+	background-repeat: repeat;
+    opacity: 0.15;
+    transition: background-image 0.6s ease;
+  }
+	.background-image2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/image/effect/sandeffect2.jpg');
+    background-size: contain;
+    background-position: center;
+	background-repeat: repeat;
+    opacity: 0.15;
+    transition: background-image 0.6s ease;
+  }
+
 	.image-container {
 	  width: 30%;
 	  height: 100%;
-	  transition: width 0.6s ease; /* Crecimiento más lento */
-	  background-color: aqua;
+	  transition: width 0.6s ease; 
+
+	  z-index: 1;
 	}
   
 	.image {
@@ -65,14 +105,16 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 	  object-fit: cover;
 	}
   
-	/* Columna de texto */
+	
 	.text-container {
-	  width: 50%; /* Más espacio para los textos */
-	  padding: 0 40px; /* Mayor separación */
+	
+	  width: 50%; 
+	  padding: 0 40px; 
 	  display: flex;
 	  flex-direction: column;
 	  justify-content: center;
-	  text-align: center; /* Texto centrado */
+	  text-align: center; 
+	  z-index: 1;
 	}
   
 	.title {
@@ -95,11 +137,13 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 	  text-align: left;
 	}
   
-	/* Cuadro de fecha */
+	
 	.date-container {
 	  width: 15%;
+	 
 	  display: flex;
 	  justify-content: flex-end;
+	  z-index: 1;
 	}
   
 	.date {
@@ -108,7 +152,10 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 	  text-align: center;
 	  padding: 20px;
 	  width: 150px;
-/* 	  border-radius: 5px; */
+	  position: relative;
+	  border-top: 5px solid black;
+  border-left: 5px solid black;
+  border-bottom: 5px solid black;
 	}
   
 	.month {
@@ -125,12 +172,14 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
   
 	/* Efecto hover: fondo con degradado, crecimiento de imagen, mayor border-radius, texto cambia a blanco */
 	.custom-component:hover {
-	  background: linear-gradient(90deg, #f16603, #772800); /* Degradado de #cd5a07 a #5c2306 */
-	  border-radius: 25px; /* Más border-radius */
+	  background: linear-gradient(90deg, #d35400, #a74300); /* Degradado de #cd5a07 a #5c2306 */
+
 	  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 	  color: white; /* Cambia el texto a blanco */
 	}
-  
+	.custom-component:hover .background-image {
+  background-image: url('/image/effect/naranjapiedra2.png'); /* Nueva imagen para hover */
+}
 	/* Crecimiento de la imagen al hacer hover */
 	.custom-component:hover .image-container {
 	  width: 32%;
