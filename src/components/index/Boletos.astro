@@ -28,7 +28,12 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 			<h1 class="title">{title}</h1>
 			<p class="description">{description}</p>
 			<p class="direccion">{direccion}</p>
-			<p class="responsive-date">{`${day} ${month} ${year}`}</p>
+			<p class="responsive-date">
+				<span class=" bg-red-800 p-2 mt-1 text-white">
+
+					{`${day} ${month} ${year}`}
+				</span>
+			</p>
 	</div>
 	
 	<!-- Tercer elemento: month y Día -->
@@ -219,9 +224,7 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 
 	}
 
-	.custom-component:hover .title, 
-	
-	.custom-component:hover .responsive-date
+	.custom-component:hover .title
 	{
 	  color: rgb(255, 172, 56);
 	}
@@ -260,7 +263,9 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
     display: block;
     font-weight: bold;
     margin-top: 10px;
-    color: black; /* Color de texto */
+	font-size: large;
+
+
   }
 
   .date-container {
