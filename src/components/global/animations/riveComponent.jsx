@@ -21,7 +21,7 @@ export const RiveElement = (props) => {
 
   useEffect(() => {
     if (rive) {
-      console.log("Rive event");
+     
       rive.on(EventType.RiveEvent, onRiveEventReceived);
 
      if(hastext){

@@ -12,12 +12,12 @@
             <div class="title">
                 EL RITUAL TOUR 2024
             </div>
-            <div class="subtitle">
+         <!--    <div class="subtitle">
                 EL KAURAL
-            </div>
+            </div> -->
             <div class="location">
                 <div class="location-text">Proximamente: </div>
-                <div class="location-detail">TIJUANA, MX SABADO 12 OCT</div>
+                <div class="location-text">TIJUANA, MX SABADO 12 OCT</div>
             </div>
         </div>
     </div>
@@ -34,6 +34,7 @@
   
   .relative {
     width: 60%;
+    height: 100%;
     transition: all 0.3s ease;
   }
   
@@ -48,7 +49,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-  /*   filter: blur(4px); */
     padding: 16px;
   }
   .background-image {
@@ -63,8 +63,6 @@
     opacity: 0.1;
     z-index: 50;
    
-    /* box shadow al aldo derecho */
-    
 
   }
   
@@ -101,18 +99,18 @@
   }
   
   .title {
-    font-size: clamp(24px, 6vw, 8rem);
+    font-size: clamp(24px, 10vw, 100px);
     font-weight: bold;
     text-align: center;
     color: white;
     margin-bottom: 1rem;
 
-    -webkit-text-stroke: 5px #ff8000;
+    -webkit-text-stroke: 3px #ff8000;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   
   .subtitle {
-    font-size: clamp(16px, 4vw, 6rem);
+    font-size: 75px;
     font-weight: bold;
     text-align: center;
     color: white;
@@ -129,17 +127,12 @@
   }
   
   .location-text {
-    font-size: clamp(14px, 3vw, 2rem);
+    font-size: clamp(16px, 3vw, 45px);
     color: white;
     margin-right: 0.5rem;
   }
   
-  .location-detail {
-    font-size: 2rem;
-    font-weight: 600;
-    color: rgb(255, 255, 255);
-    align-self: center;
-  }
+
 
   @media (max-width: 768px) {
     .group {
@@ -153,13 +146,14 @@
     }
     .text-container {
       width: 100%;
-      background-color: white;
+
       align-items: center;
       padding: 20px;
       transition: none;
     }
     .relative {
       width: 100%;
+      height: 500px;
       transition: none;
     }
     .group .text-container .relative {
