@@ -12,9 +12,7 @@
             <div class="title">
                 EL RITUAL TOUR 2024
             </div>
-         <!--    <div class="subtitle">
-                EL KAURAL
-            </div> -->
+
             <div class="location">
                 <div class="location-text">Proximamente: </div>
                 <div class="location-text">TIJUANA, MX SABADO 12 OCT</div>
@@ -98,11 +96,9 @@
   
   .title {
     font-size: clamp(24px, 10vw, 150px);
-/*     font-weight: bold; */
     text-align: center;
     color: rgb(255, 215, 173);
     margin-bottom: 1rem;
-
     -webkit-text-stroke: 1px #ff8000;
     font-family: OldPress;
   }
@@ -161,6 +157,34 @@
       transition: none;
     }
 
+    
+
 
   }
+  @media  screen and (height< 420px) {
+    .title {
+      font-size: clamp(16px, 3vw, 48px);
+    text-align: center;
+    color: rgb(255, 215, 173);
+    margin-bottom: 1rem;
+    -webkit-text-stroke: 1px #ff8000;
+    font-family: OldPress;
+  }
+  
+
+  .location {
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+  }
+  
+  .location-text {
+    font-size: clamp(16px, 3vw, 25px);
+    color: white;
+    margin-right: 0.5rem;
+    font-family: OldPress;
+  }
+   
+    }
 </style>

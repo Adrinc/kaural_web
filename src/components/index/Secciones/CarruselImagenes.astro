@@ -6,39 +6,22 @@ interface Props {
 	imagen?:string;
 }
 
-const {texto="", cantidad=10,  imagen="/image/Elkauraltxtblanco.jpg" } = Astro.props;
+const {texto="", cantidad=20,  imagen="/image/Elkauraltxtblanco.jpg" } = Astro.props;
 const items = Array.from({ length: cantidad }).map(() => ({ texto, imagen }));
 ---
 
 <div class="content-wrapper">
 	<div class="carrusel">
-	  {items.concat(items).map((item) => (
+	  {items.concat(items).map(() => (
 		<div class="item" >
 	
-		  <img src="/image/kaural/integrantes/nestor.jpg" alt="kaural" />
+		  <img class="imgcarrusel" src="/image/kaural/integrantes/nestor.jpg" alt="kaural" />
+		  <img class="imgcarrusel" src="/image/kaural/integrantes/baterista.jpg" alt="kaural" />
+		  <img class="imgcarrusel" src="/image/kaural/integrantes/guitarrista.jpg" alt="kaural" />
+		  <img class="imgcarrusel" src="/image/kaural/integrantes/guitarrista2.jpg" alt="kaural" />
+		  <img class="imgcarrusel" src="/image/kaural/integrantes/bajista.jpg" alt="kaural" />
 	
-		  <img src="/image/kaural/integrantes/baterista.jpg" alt="kaural" />
-		  <img src="/image/kaural/integrantes/guitarrista.jpg" alt="kaural" />
-		  <img src="/image/kaural/integrantes/guitarrista2.jpg" alt="kaural" />
-	
-		  <img src="/image/kaural/integrantes/bajista.jpg" alt="kaural" />
-		  <img src="/image/kaural/integrantes/nestor.jpg" alt="kaural" />
-	
-		  <img src="/image/kaural/integrantes/baterista.jpg" alt="kaural" />
-		  <img src="/image/kaural/integrantes/guitarrista.jpg" alt="kaural" />
-		  <img src="/image/kaural/integrantes/guitarrista2.jpg" alt="kaural" />
-		
-		  <img src="/image/kaural/integrantes/bajista.jpg" alt="kaural" />
-		  <img src="/image/kaural/integrantes/nestor.jpg" alt="kaural" />
-	
-		  <img src="/image/kaural/integrantes/baterista.jpg" alt="kaural" />
-		  <img src="/image/kaural/integrantes/guitarrista.jpg" alt="kaural" />
-		  <img src="/image/kaural/integrantes/guitarrista2.jpg" alt="kaural" />
 
-		  <img src="/image/kaural/integrantes/bajista.jpg" alt="kaural" />
-	
-		  
-		{/*   <button class="check-coverage-btn">{item.texto}</button> */}
 		</div>
 	  ))}
 	</div>
@@ -79,7 +62,7 @@ const items = Array.from({ length: cantidad }).map(() => ({ texto, imagen }));
     align-items: center;
     background-color: #000000;
   }
-	img {
+	.imgcarrusel {
 	  width: 100%;
 	  height: 100%;
 	  object-fit: cover;
@@ -108,11 +91,10 @@ const items = Array.from({ length: cantidad }).map(() => ({ texto, imagen }));
 	  cursor: pointer;
 	}
   
-	@media  screen and (height< 400px) {
+/* 	@media  screen and (height< 400px) {
 		.content-wrapper {
 	  padding-right: 153px;
-	  border-top: 1px solid var(--tertiary-color);
-	  border-bottom: 1px solid var(--tertiary-color);
+
 	  padding: 20px;
 	  margin-top: clamp(40px, 50vh, 200px);
 	  margin-botom: clamp(40px, 50vh, 200px);
@@ -122,7 +104,7 @@ const items = Array.from({ length: cantidad }).map(() => ({ texto, imagen }));
 	@media (max-width: 900px) 
 	{
 		
-	}
+	} */
   
 	
   </style>
