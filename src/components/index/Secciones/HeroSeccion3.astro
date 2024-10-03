@@ -22,9 +22,10 @@ import RiveComponent from "../../global/animations/riveComponent";
  -->
 
 
-	<main>
+	<main class="elmain">
 		<div class="left">
-			<div class="title">EL KAURAL</div>
+			<!-- <div class="title">EL KAURAL</div> -->
+			<img class="imagen" src="/image/kaural/kaural_outline2.png" alt="kaural oout line logo">
 		</div>
 		
 		<div class="right">
@@ -40,93 +41,100 @@ Sus fundadores son Álvaro Macías, Christian Corona y Néstor López, encargado
   <style>
 	section {
 		width: 100vw;
-		height: 80vh;
+		height: 75vh;
 		background-color: black;
 	}
-	main {
+	.elmain {
 	align-items: center;
-	  position: relative;
+
 	  justify-content: space-evenly;
 	  display: flex;
 	  flex-direction: row;
 	  width: 100%;
 	  height: 100%;
+
 	}
   
-	.left, .right {
-	  flex: 1;
-	  display: flex;
+
+	.left {
+		display: flex;
 	  justify-content: center;
 	  align-items: center;
-	  padding: 20px;
-
-	  height: 100%;
-	}
-  
-	.left {
 	  text-align: center;
-	}
-  
-	.right {
-	  flex-direction: column;
-	  
-	  padding: 100px;
+	  width: 100%;
+	  height: 50%;
 
 	}
-  
-	.title {
-	  font-size: clamp(24px, 7vw, 200px);
-	  font-weight: bold;
-	  color: white;
-	  font-family: OldPress;
+	.right {
+		display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+
+	  width: 100%;
+	  height: 100%;
+
+
 	}
+	.imagen {
+		height: 100%;
+		width: 100%;
+		
+
+		object-fit: contain;
+	}
+  
+  
+
   
 	.subtitle {
-	  font-size: clamp(16px, 5vw, 75px);
-	  font-weight: bold;
+	  font-size: clamp(32px, 10vw, 200px);
 	  color: rgb(255, 255, 255);
 	  text-align: center;
 	  font-family: OldPress;
 	}
   
 	.description {
-	  font-size: clamp(12px, 3vw, 32
-	  px);
-	  font-weight: 300;
+	  font-size: clamp(14px, 5vw, 32px);
+
 	  color: white;
-	  margin-bottom: 10px;
+	
 	  text-align: left;
 	  overflow: auto;
 	  font-family: OldPress;
 	}
   
-	@media (max-width: 1024px) {
-		main {
+	@media (max-width: 768px) {
+		section{
+			height: 80vh;
+			padding: auto;
+		}
+		.elmain {
 		flex-direction: column;
+		
 	  }
-  
-	 
-	}
-	@media (max-height: 700px) {
-		main {
-		flex-direction: column;
+	  .imagen {
+		width: 200px;
+		height: 200px;
 
 	  }
-	  .title {
-		padding: 20px;
-		font-size: 18px;
-	  }
-	  .subtitle 
-		{
-			font-size: 12px;
+	  .right {
+		padding: 16px;
 
-		}
-		.description {
-			font-size: 10px;
-		}
+		justify-content: flex-start;
+		align-items: center;
+	  }
+
+
+  	.subtitle {
+	  font-size: clamp(16px, 10vw, 50px);
+	  color: rgb(255, 255, 255);
+	  text-align: center;
+	  font-family: OldPress;
+	}
 	 
 	}
-  
+
 
   </style>
   

@@ -9,7 +9,7 @@ import RiveComponent from '../../global/animations/riveComponent';
 
 	
 	
-	<main>
+	<div class="rivecomp web">
 		<RiveComponent 
 		src="/rive/kaural.riv" 
 		artboard="home_seccion2"
@@ -20,7 +20,19 @@ import RiveComponent from '../../global/animations/riveComponent';
 		client:only/>
 	
 				
-	</main>
+	</div>
+
+	<div class="rivecomp movil">
+		<RiveComponent 
+		src="/rive/kaural.riv" 
+		artboard="home_seccion2_movil"
+		stateMachines="State Machine 1"
+		autoplay={true} 
+		transition:persist 
+		fit="fill"
+		client:only/>
+
+	</div>
 	
 </section>
 		  
@@ -28,26 +40,49 @@ import RiveComponent from '../../global/animations/riveComponent';
 
 
 
-		section{
+section{
 		
-			position: relative;
+	position: relative;
 			display: flex;
-			
+			flex-direction: column-reverse;
 			flex: 1;
+			cursor: none;
 	
 			width: 100vw;
-			height: 75vh;
+			height: 80vh;
+	
 
-		
-		}
-		main {
+	}
+
+	.rivecomp{
+		position: relative;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
 		height: 100%;
+		overflow: hidden;
 	
+	}
+	.web{
+		display: block;
+	}
+	.movil{
+		display: none;
+	}
+	@media (max-width: 768px) {
+		section{
+			cursor: default;
+			
 		}
-
+		.web{
+			display: none;
+		}
+		.movil{
+			display: block;
+		}
+	}
 
 
 	
