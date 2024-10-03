@@ -93,6 +93,8 @@
     border-radius: 5px;
     white-space: nowrap;
     opacity: 0;
+    font-family: OldPress;
+    font-size:xx-large;
     transition: opacity 0.3s ease;
   }
 
@@ -115,6 +117,12 @@
     .social-icon {
       width: clamp(25px, 6vh, 65px);
       height: clamp(25px, 6vh, 65px);
+    }
+    .social-icon::after {
+      top: -50%;
+      left: 50%;
+      font-size: medium;
+      transform: translateX(-50%);
     }
   }
 </style>

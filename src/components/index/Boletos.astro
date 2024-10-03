@@ -28,6 +28,7 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 			<h1 class="title">{title}</h1>
 			<p class="description">{description}</p>
 			<p class="direccion">{direccion}</p>
+			<p class="responsive-date">{`${day} ${month} ${year}`}</p>
 	</div>
 	
 	<!-- Tercer elemento: month y Día -->
@@ -50,6 +51,7 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 	  justify-content: space-between;
 	  background-color: white;
 	  border-bottom: 1px solid black;
+	
 	  width: 100%;
 	 
 	  transition: all 0.6s ease; 
@@ -62,6 +64,7 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 	  justify-content: space-between;
 		width: 100%;
 		height: auto;
+		
 	}
   
 	.background-image {
@@ -97,6 +100,7 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 	  transition: width 0.6s ease; 
 
 	  z-index: 1;
+	  background-color: tomato;
 	}
   
 	.image {
@@ -118,8 +122,8 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 	}
   
 	.title {
-	  font-size: clamp(16px, 5vw, 60px);
-	  font-weight: bold;
+	  font-size: clamp(16px, 5vw, 90px);
+	  font-family: OldPress;
 	  text-align: left;
 	}
   
@@ -136,6 +140,7 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 	  margin-top: 5px;
 	  text-align: left;
 	}
+
   
 	
 	.date-container {
@@ -157,6 +162,10 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
   border-left: 5px solid black;
   border-bottom: 5px solid black;
 	}
+	.responsive-date {
+  display: none;
+}
+
   
 	.month {
 	  font-size: 1.5rem;
@@ -174,12 +183,10 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 	.custom-component:hover {
 	  background: linear-gradient(90deg, #d35400, #a74300); /* Degradado de #cd5a07 a #5c2306 */
 
-	  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-	  color: white; /* Cambia el texto a blanco */
+	
+	  color: white; 
 	}
-	.custom-component:hover .background-image {
-  background-image: url('/image/effect/naranjapiedra2.png'); /* Nueva imagen para hover */
-}
+
 	/* Crecimiento de la imagen al hacer hover */
 	.custom-component:hover .image-container {
 	  width: 32%;
@@ -188,7 +195,107 @@ const { title, description, imgSrc="public/image/workingteam.png", imgAlt, direc
 	/* Cambiar color del texto a blanco al hacer hover */
 	.custom-component:hover .title,
 	.custom-component:hover .description,
-	.custom-component:hover .direccion {
+	.custom-component:hover .direccion,
+	.custom-component:hover .responsive-date
+	{
 	  color: white;
 	}
+
+
+
+
+
+	@media (max-width: 768px) {
+  .custom-component {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  	.custom-component:hover .image-container {
+	  width: 100%;
+	
+	}
+	.custom-component:hover {
+	  background: linear-gradient(90deg, #000000, #a74300); /* Degradado de #cd5a07 a #5c2306 */
+
+	}
+
+	.custom-component:hover .title, 
+	
+	.custom-component:hover .responsive-date
+	{
+	  color: rgb(255, 172, 56);
+	}
+
+
+
+  .image-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: width 0.6s ease; 
+	z-index: 1;
+	background-color: rgb(0, 0, 0);
+	opacity: 0.2;
+  }
+
+
+
+  .text-container {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+
+  }
+
+  .date-container {
+    display: none; /* Ocultar la caja de fecha */
+  }
+
+  .direccion {
+    font-weight: bold; /* Muestra la fecha en negritas debajo del texto */
+  }
+  .responsive-date {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: black; /* Color de texto */
+  }
+
+  .date-container {
+    display: none; /* Ocultar la sección de la fecha en cajas */
+  }
+   /* Asignamos la imagen como fondo del contenedor principal */
+   .custom-component {
+    background-color: rgb(255, 255, 255);
+
+  }
+
+  /* Para que el texto siga siendo legible */
+  .text-container, .responsive-date, .direccion {
+    position: relative;
+    z-index: 2;
+    color: black; /* Cambia el color del texto si es necesario */
+  }
+  .title {
+	  font-size: clamp(34px, 2vw, 90px);
+
+	}
+  
+	.description {
+     font-size: clamp(16px, 2vw, 24px);
+	
+
+	}
+  
+	.direccion {
+	  font-size: clamp(14px, 2vw, 16px);
+
+	}
+
+  
+}
+
+		
   </style>
