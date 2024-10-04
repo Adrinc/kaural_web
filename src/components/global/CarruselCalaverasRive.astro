@@ -1,0 +1,73 @@
+---
+
+import RiveComponent from "../global/animations/riveComponent";
+
+---
+<div class="componente">
+
+
+
+	<div class="rivecomp">
+
+	<RiveComponent 
+	src="/rive/kaural-carrusel-calavera.riv" 
+	artboard="carrusel_banda"
+	stateMachines="State Machine 1"
+	autoplay={true} 
+	transition:persist 
+	fit="fill"
+	client:only/>
+
+	</div>
+
+</div>
+		  
+	<style>
+
+		.componente{
+		
+			position: relative;
+			display: flex;
+			flex-direction: column-reverse;
+		
+			
+	
+			width: 100vw;
+			height: 150px;
+            background-color: black;
+			overflow: hidden;
+		}
+
+		.rivecomp{
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			
+		}
+
+		@media (max-width: 768px) {
+			.componente{
+		
+				width: 100vw;
+				height: 100px;
+			}
+			.rivecomp{
+				width: 200%;
+				height: 100%;
+			}
+		
+
+		}
+
+
+
+	
+	
+	
+	
+ </style>
